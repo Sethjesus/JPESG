@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Multi-Section Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        .content {
+            display: none; /* Initially hide all content */
+        }
+        .active {
+            display: block; /* Show active content */
+        }
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">JP ESG</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="#" onclick="switchContent('home')">Home</a>
+                    <a class="nav-link" href="#" onclick="switchContent('videoBlog')">Video & Blog</a>
+                    <a class="nav-link" href="#" onclick="switchContent('download')">Download</a>
+                    <a class="nav-link" href="#" onclick="switchContent('products')">Products</a>
+                    <a class="nav-link" href="#" onclick="switchContent('qa')">Q&A</a>
+                    <a class="nav-link" href="#" onclick="switchContent('contact')">Contact Us</a>
+                </div>
+                <button class="btn btn-outline-success" onclick="switchLanguage('en')">English</button>
+                <button class="btn btn-outline-success" onclick="switchLanguage('zh')">中文</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="home_en" class="content active">
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP ESG About Us</title>
+    <style>
+        h1 {
+            color: blue; /* 设置H1标签的字体颜色为蓝色 */
+        }
+    </style>
+</head>
+<body>
+    <h1>About Us: </h1>
+    <h3>The Story of JP ESG - Powering a Sustainable Future</h3>
+    <p>At JP ESG, our journey began with a deep-rooted commitment to the Earth and an innovative vision for the future. Born from the realization that every action affects our planet, we embarked on a mission to transform how businesses and individuals consume power. Through advanced energy monitoring and dedicated efforts toward net-zero carbon emissions, we are not just a company; we are a movement dedicated to preserving our world.</p>
+    <h3>Origins of Innovation</h3>
+        <p>The idea for JP ESG sparked on a crisp autumn evening when our founder, Dr. Emily Zhao, witnessed firsthand the impact of energy waste in her local community. Streetlights burned all night in empty parks, and offices remained brightly lit long after workers had gone home. This unnecessary energy consumption not only wasted resources but also contributed significantly to carbon emissions. Dr. Zhao asked herself, "What if we could change this? What if everyone could see and manage their energy usage efficiently?"Fuelled by this idea, JP ESG was founded with the goal of developing smart, intuitive monitoring systems that could easily be integrated into any home or business. These systems were designed not only to provide real-time insights into energy consumption but also to guide users on optimizing their usage and reducing their carbon footprint.<br>.</p>
+    <h3>Revolutionizing Energy Monitoring</h3>
+    <p> JP ESG introduced its first energy monitoring system in 2021. It was a revolutionary piece of technology that utilized real-time data analytics to provide users with actionable insights into their energy consumption. Users could instantly see how much energy they were using, identify peak usage times, and receive tailored recommendations on how to reduce their consumption.<br>But we didn’t stop there. We saw the potential to impact greater change by connecting our technology with renewable energy sources. Our systems began to help users not only monitor but also switch to cleaner energy options, such as solar or wind power, seamlessly integrating with existing infrastructure.</p>
+   <h2>The Net-Zero Vision</h2>
+   <p>As our technology advanced, so did our ambitions. JP ESG committed to a net-zero carbon future, setting a target to help reduce global carbon emissions significantly by 2030. We partnered with environmental scientists, policymakers, and local communities to expand our impact. Every product sold contributed to global reforestation projects and research into sustainable practices.</p>
+   <h2>Earth's Guardians</h2>
+   <p>Today, JP ESG is recognized not just for our innovative products but for our commitment to the planet. We are more than a technology provider; we are guardians of the Earth. Our ongoing initiatives include educational programs that raise awareness about sustainable living and community projects that encourage a greener lifestyle.</p>
+   <h2>Join Us</h2>
+   <p>We at JP ESG believe that protecting our planet requires collective action. We invite you to join us in this crucial mission—whether by integrating JP ESG’s monitoring systems into your life, participating in community sustainability projects, or simply making more informed energy choices. Every effort counts.<br>
+    Together, we can forge a sustainable future, ensuring that our planet remains vibrant and thriving for generations to come. Let's empower change—one watt at a time. Join us at JP ESG, where every day is a step towards a cleaner, greener planet.
+</p>
+   <!-- 更多内容 -->
+</body>
+</html>
+            
+            </div>
+        <div id="home_zh" class="content">主页内容中文</div>
+        <div id="videoBlog_en" class="content"><p<!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Video Layout</title>
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+            <style>
+              .videobox iframe {
+                width: 100%;
+                height: 250px; /* Adjust height as needed */
+              }
+            </style>
+            </head>
+            <body>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>3 Phase Power Cloud Management<br>三相電源雲端管理系統</strong></p>
+                  <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/OAlT24M9muE" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>3 Phase Panel with RS485<br>三相電源連結RS485</strong></p>
+                  <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/RoOzE9lyJ1c" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>UDM Wired 3 Phase Smart Meter<br>三相智慧電表操作</strong></p>
+                  <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/t1wWHKrVr04" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>UDM ESG Solution<br>UDM ESG解決方案</strong></p>
+                  <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/R3s3l_Hr6tQ" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>UDM Smartphone Setting<br>UDM智能手機設定</strong></p>
+                  <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/iyKjvl0YfDs" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Wireless Cloud Management<br>UDM 無線解決方案雲端管理</strong></p>
+                  <div class="videobox">
+                    <iframe src="https://www.youtube.com/embed/QiCgT0_Revc" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </body>
+            </html>
+            <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Page</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+          .link-container {
+            display: flex;
+            align-items: center; /* Center items vertically within the container */
+            margin-bottom: 20px; /* Spacing below each link block */
+            padding: 10px; /* Padding around the content */
+            background-color: #f8f9fa; /* Light background color */
+            border-radius: 5px; /* Rounded corners for the link container */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+          }
+          
+          .link-container a {
+            text-decoration: none; /* Remove underline from links */
+            color: #007bff; /* Bootstrap primary blue for consistency */
+            font-size: 1.2em; /* Larger font size for readability */
+            margin-left: 10px; /* Space between the image and text */
+          }
+          
+          .link-container a:hover {
+            color: #0056b3; /* Darker blue on hover */
+          }
+        
+          .link-container img {
+            width: 66px;
+            height: 66px;
+            border-radius: 50%; /* Circular images */
+          }
+        </style>
+        </head>
+        <body>
+        
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="link-container">
+                <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213571&authkey=%21AOirEeL9tE2PYe4" alt="My Blog">
+                <a href="https://jackyimba.blogspot.com/">Visit My Blog</a>
+              </div>
+              <div class="link-container">
+                <img src="https://via.placeholder.com/66" alt="PIXNET"> <!-- Placeholder image, replace with actual image URL -->
+                <a href="https://udmjpesg520.pixnet.net/blog/post/134630971?utm_source=PIXNET&utm_medium=pcard_article&utm_content=4619365b7225bbd1b0">Visit PIXNET Blog</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </body>
+        </html>
+        </div>
+        <div id="videoBlog_zh" class="content">影片與部落格</div>
+        <div id="download_en" class="content">Download content</div>
+        <div id="download_zh" class="content">下載內容</div>
+        <div id="products_en" class="content">Products content</div>
+        <div id="products_zh" class="content">產品內容</div>
+        <div id="qa_en" class="content"><!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Q&A Form</title>
+            </head>
+            <body>
+                <h1>Submit Your Question</h1>
+                <form action="mailto:401.esg@udmgroup.com" method="post" enctype="text/plain">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name"><br><br>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+            
+                    <label for="question">Your Question:</label>
+                    <textarea id="question" name="question"></textarea><br><br>
+            
+                    <input type="submit" value="Send">
+                </form>
+            </body>
+            </html>
+            </div>
+        <div id="qa_zh" class="content">問題與回覆</div>
+        <div id="contact_en" class="content">Contact Us</div>
+        <div id="contact_zh" class="content">聯繫我們</div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        © 2024 Your Company. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function switchContent(sectionId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none'; // Hide all content
+            });
+            const activeContentEn = document.getElementById(sectionId + '_en');
+            const activeContentZh = document.getElementById(sectionId + '_zh');
+            if (currentLanguage === 'en') {
+                activeContentEn.style.display = 'block';
+            } else {
+                activeContentZh.style.display = 'block';
+            }
+        }
+
+        let currentLanguage = 'en'; // Default language
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none'; // Initially hide all content
+            });
+            const activeNav = document.querySelector('.navbar-nav .active');
+            if (activeNav) {
+                const sectionId = activeNav.getAttribute('onclick').split("'")[1];
+                document.getElementById(sectionId + '_' + lang).style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
