@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/jacke/Desktop/Python%20Data/JP%20ESG.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JP ESG</title>
     <style>
@@ -81,86 +81,94 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-          <img src="./JP ESG_files/Logo.jpg" alt="JP ESG Logo">
+          <img src="https://github.com/Sethjesus/Jacky/blob/main/Logo.jpg?raw=true" alt="JP ESG Logo">
 
         </div>
         <ul class="nav-links" id="nav-links-en">
-            <li><a onclick="showContent(&#39;home-en&#39;)">Home</a></li>
-            <li><a onclick="showContent(&#39;solution-en&#39;)">Solution</a></li>
-            <li><a onclick="showContent(&#39;video-en&#39;)">Video &amp; Blog</a></li>
-            <li><a onclick="showContent(&#39;download-en&#39;)">Download</a></li>
-            <li><a onclick="showContent(&#39;consult-en&#39;)">Consult</a></li>
-            <li><a onclick="showContent(&#39;contact-en&#39;)">Contact</a></li>
+            <li><a onclick="showContent('home-en')">Home</a></li>
+            <li><a onclick="showContent('solution-en')">Solution</a></li>
+            <li><a onclick="showContent('video-en')">Video & Blog</a></li>
+            <li><a onclick="showContent('download-en')">Download</a></li>
+            <li><a onclick="showContent('consult-en')">Consult</a></li>
+            <li><a onclick="showContent('contact-en')">Contact</a></li>
         </ul>
         <ul class="nav-links" id="nav-links-zh" style="display: none;">
-            <li><a onclick="showContent(&#39;home-zh&#39;)">首頁</a></li>
-            <li><a onclick="showContent(&#39;solution-zh&#39;)">解決方案</a></li>
-            <li><a onclick="showContent(&#39;video-zh&#39;)">視頻與部落格</a></li>
-            <li><a onclick="showContent(&#39;download-zh&#39;)">下載</a></li>
-            <li><a onclick="showContent(&#39;consult-zh&#39;)">諮詢</a></li>
-            <li><a onclick="showContent(&#39;contact-zh&#39;)">聯絡方式</a></li>
+            <li><a onclick="showContent('home-zh')">首頁</a></li>
+            <li><a onclick="showContent('solution-zh')">解決方案</a></li>
+            <li><a onclick="showContent('video-zh')">視頻與部落格</a></li>
+            <li><a onclick="showContent('download-zh')">下載</a></li>
+            <li><a onclick="showContent('consult-zh')">諮詢</a></li>
+            <li><a onclick="showContent('contact-zh')">聯絡方式</a></li>
         </ul>
         <div class="language-toggle">
-            <button id="toggle-en" onclick="toggleLanguage(&#39;en&#39;)">EN</button>
-            <button id="toggle-zh" onclick="toggleLanguage(&#39;zh&#39;)">中文</button>
+            <button id="toggle-en" onclick="toggleLanguage('en')">EN</button>
+            <button id="toggle-zh" onclick="toggleLanguage('zh')">中文</button>
         </div>
     </nav>
 
     <div id="home-en" class="content-container active">
         <h1>Welcome to JP ESG</h1>
-        
-        
-        
-            <style>
-                .slideshow-container {
-                    position: relative;
-                    max-width: 800px; /* Set this to the maximum width you want */
-                    height: 500px; /* Adjust height as needed */
-                    margin: auto;
-                    overflow: hidden;
-                }
-                .slide {
-                    display: none;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                }
-            </style>
-        
-        
-            <div class="slideshow-container">
-                <!-- Add your images here -->
-                <img class="slide" src="./JP ESG_files/abundance 1.jpg" style="display: none;">
-                <img class="slide" src="./JP ESG_files/abundance 2.jpg" style="display: none;">
-                <img class="slide" src="./JP ESG_files/abundance 3.jpg" style="display: none;">
-                <img class="slide" src="./JP ESG_files/abundance 4.jpg" style="display: none;">
-                <img class="slide" src="./JP ESG_files/abundance 5.jpg" style="display: none;">
-                <img class="slide" src="./JP ESG_files/abundance 6.jpg" style="display: none;">
-                <img class="slide" src="./JP ESG_files/abundance 7.jpg" style="display: block;">
-                <!-- Add as many images as you like -->
-            </div>
-        
-            <script>
-                var slideIndex = 0;
-                function showSlides() {
-                    var slides = document.getElementsByClassName("slide");
-                    for (var i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";  
-                    }
-                    slideIndex++;
-                    if (slideIndex > slides.length) {slideIndex = 1}
-                    slides[slideIndex-1].style.display = "block";  
-                    setTimeout(showSlides, 3000); // Change image every 3 seconds
-                }
-                showSlides();
-            </script>
+        <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .slideshow-container {
+            width: 100%;
+            height: 500px; /* Adjust height as needed */
+            position: relative;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none; /* Hide images initially */
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Only images with class 'slide' will be part of the slideshow -->
+        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%201.jpg?raw=true" style="display:block;">
+        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%202.jpg?raw=true">
+        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%203.jpg?raw=true">
+        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%204.jpg?raw=true">
+        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%205.jpg?raw=true">
+        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%206.jpg?raw=true">
+        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%207.jpg?raw=true">
+    </div>
+
+    <script>
+        let slides = document.getElementsByClassName("slide"); // Only select elements with the class 'slide'
+        let slideIndex = 0;
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0; // Loop back to the first image
+            }
+            slides[slideIndex].style.display = "block"; // Show the next image
+            setTimeout(showSlides, 3000); // Change image every 3000 milliseconds (3 seconds)
+        }
+
+        window.onload = showSlides; // Start the slideshow once the window has loaded
+    </script>
+</body>
+</html>
+
         
         
 
-          
-          
-          
-              
+
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <title>JP ESG About Us</title>
               <style>
@@ -168,8 +176,8 @@
                       color: blue; /* 设置H1标签的字体颜色为蓝色 */
                   }
               </style>
-          
-          
+          </head>
+          <body>
               <h1>About Us: </h1>
               <h3>The Story of JP ESG - Powering a Sustainable Future</h3>
               <p>At JP ESG, our journey began with a deep-rooted commitment to the Earth and an innovative vision for the future. Born from the realization that every action affects our planet, we embarked on a mission to transform how businesses and individuals consume power. Through advanced energy monitoring and dedicated efforts toward net-zero carbon emissions, we are not just a company; we are a movement dedicated to preserving our world.</p>
@@ -196,42 +204,42 @@
                where every day is a step towards a cleaner, greener planet.
           </p>
              <!-- 更多内容 -->
-          
-          
-                      .<p></p>
+          </body>
+          </html>
+                      .</p>
     </div>
     <div id="solution-en" class="content-container">
         <h1>Solution</h1>
         <p>Details about our solutions.</p>
     </div>
     <div id="video-en" class="content-container">
-        <h1>Video &amp; Blog</h1>
-        <p> 
-          
-          
+        <h1>Video & Blog</h1>
+        <p> <html lang="en">
+          <head>
+          <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Video Layout</title>
-          <link href="./JP ESG_files/bootstrap.min.css" rel="stylesheet">
+          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
           <style>
             .videobox iframe {
               width: 100%;
               height: 250px; /* Adjust height as needed */
             }
           </style>
-          
-          
-          </p><div class="container">
+          </head>
+          <body>
+          <div class="container">
             <div class="row">
               <div class="col-md-6">
                 <p><strong>3 Phase Power Cloud Management<br>三相電源雲端管理系統</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/OAlT24M9muE.html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/OAlT24M9muE" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
               <div class="col-md-6">
                 <p><strong>3 Phase Panel with RS485<br>三相電源連結RS485</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/RoOzE9lyJ1c.html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/RoOzE9lyJ1c" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -240,13 +248,13 @@
               <div class="col-md-6">
                 <p><strong>UDM Wired 3 Phase Smart Meter<br>三相智慧電表操作</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/t1wWHKrVr04.html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/t1wWHKrVr04" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
               <div class="col-md-6">
                 <p><strong>UDM ESG Solution<br>UDM ESG解決方案</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/R3s3l_Hr6tQ.html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/R3s3l_Hr6tQ" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -255,27 +263,27 @@
               <div class="col-md-6">
                 <p><strong>UDM Smartphone Setting<br>UDM智能手機設定</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/iyKjvl0YfDs.html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/iyKjvl0YfDs" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
               <div class="col-md-6">
                 <p><strong>Wireless Cloud Management<br>UDM 無線解決方案雲端管理</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/QiCgT0_Revc.html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/QiCgT0_Revc" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
           </div>
-          
-          
-          
-      
-      
-      
+          </body>
+          </html>
+          <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>My Page</title>
       <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="./JP ESG_files/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       <style>
         .link-container {
           display: flex;
@@ -304,43 +312,43 @@
           border-radius: 50%; /* Circular images */
         }
       </style>
-      
-      
+      </head>
+      <body>
       
       <div class="container mt-3">
         <div class="row">
           <div class="col-md-6">
             <div class="link-container">
-              <img src="./JP ESG_files/Blogger.jpg" alt="My Blog">
+              <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213571&authkey=%21AOirEeL9tE2PYe4" alt="My Blog">
               <a href="https://jackyimba.blogspot.com/">Visit My Blog</a>
             </div>
             <div class="link-container">
-              <img src="./JP ESG_files/66" alt="PIXNET"> <!-- Placeholder image, replace with actual image URL -->
-              <a href="https://udmjpesg520.pixnet.net/blog/post/134630971?utm_source=PIXNET&amp;utm_medium=pcard_article&amp;utm_content=4619365b7225bbd1b0">Visit PIXNET Blog</a>
+              <img src="https://via.placeholder.com/66" alt="PIXNET"> <!-- Placeholder image, replace with actual image URL -->
+              <a href="https://udmjpesg520.pixnet.net/blog/post/134630971?utm_source=PIXNET&utm_medium=pcard_article&utm_content=4619365b7225bbd1b0">Visit PIXNET Blog</a>
             </div>
           </div>
         </div>
       </div>
       
-      
-      
-      </div>.<p></p>
-    
+      </body>
+      </html>
+      </div>.</p>
+    </div>
     <div id="download-en" class="content-container">
         <h1>Download</h1>
         <p>Download our resources.</p>
     </div>
     <div id="consult-en" class="content-container">
         <h1>Consult</h1>
-        <p> 
-          
-          
-              
+        <p> <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Q&amp;A Form</title>
-          
-          
-              </p><h1>Submit Your Question</h1>
+              <title>Q&A Form</title>
+          </head>
+          <body>
+              <h1>Submit Your Question</h1>
               <form action="mailto:401.esg@udmgroup.com" method="post" enctype="text/plain">
                   <label for="name">Name:</label>
                   <input type="text" id="name" name="name"><br><br>
@@ -353,10 +361,10 @@
           
                   <input type="submit" value="Send">
               </form>
-          
-          
-          </div><p></p>
-    
+          </body>
+          </html>
+          </div></p>
+    </div>
     <div id="contact-en" class="content-container">
         <h1>Contact</h1>
         <p>Contact us for more information.</p>
@@ -364,10 +372,10 @@
 
     <div id="home-zh" class="content-container">
         <h1>歡迎光臨JP ESG</h1>
-        <p>
-          
-          
-              
+        <p><!DOCTYPE html>
+          <html lang="zh">
+          <head>
+              <meta charset="UTF-8">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <title>JP ESG 關於我們</title>
               <style>
@@ -375,11 +383,11 @@
                       color: blue; /* 設置H1標籤的字體顏色為藍色 */
                   }
               </style>
-          
-          
-            </p><div style="display: flex;  align-items: center;">
-                <img src="./JP ESG_files/ESG image.jpg" alt="ESG Image">
-                <img src="./JP ESG_files/EMS.jpg" alt="EMS Image" style="width: 300px; height: 300px;">
+          </head>
+          <body>
+            <div style="display: flex;  align-items: center;">
+                <img src="https://github.com/Sethjesus/Photo/blob/main/ESG%20image.jpg?raw=true" alt="ESG Image">
+                <img src="https://github.com/Sethjesus/Photo/blob/main/EMS.jpg?raw=true" alt="EMS Image" style="width: 300px; height: 300px;">
             </div>
             
             
@@ -406,9 +414,9 @@
               <p>我們在 JP ESG 相信，保護地球需要集體行動。我們邀請您加入這一關鍵使命——無論是將 JP ESG 的監控系統融入您的生活，參與社區可持續項目，還是做出更明智的能源選擇。每一個努力都很重要。</p>
               <p>一起，我們可以打造一個可持續的未來，確保我們的星球在未來世代仍然充滿活力和生機。讓我們一瓦一瓦地推動變革。加入我們 JP ESG，每一天都是邁向更清潔、更綠色星球的一步。</p>
               <!-- 更多內容 -->
-          
-          
-          。<p></p>
+          </body>
+          </html>
+          。</p>
     </div>
     <div id="solution-zh" class="content-container">
         <h1>解决方案</h1>
@@ -416,32 +424,32 @@
     </div>
     <div id="video-zh" class="content-container">
         <h1>視頻與部落格</h1>
-        <p>  </p><p> 
-          
-          
+        <p>  <p> <html lang="en">
+          <head>
+          <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Video Layout</title>
-          <link href="./JP ESG_files/bootstrap.min.css" rel="stylesheet">
+          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
           <style>
             .videobox iframe {
               width: 100%;
               height: 250px; /* Adjust height as needed */
             }
           </style>
-          
-          
-          </p><div class="container">
+          </head>
+          <body>
+          <div class="container">
             <div class="row">
               <div class="col-md-6">
                 <p><strong>3 Phase Power Cloud Management<br>三相電源雲端管理系統</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/OAlT24M9muE(1).html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/OAlT24M9muE" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
               <div class="col-md-6">
                 <p><strong>3 Phase Panel with RS485<br>三相電源連結RS485</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/RoOzE9lyJ1c(1).html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/RoOzE9lyJ1c" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -450,13 +458,13 @@
               <div class="col-md-6">
                 <p><strong>UDM Wired 3 Phase Smart Meter<br>三相智慧電表操作</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/t1wWHKrVr04(1).html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/t1wWHKrVr04" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
               <div class="col-md-6">
                 <p><strong>UDM ESG Solution<br>UDM ESG解決方案</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/R3s3l_Hr6tQ(1).html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/R3s3l_Hr6tQ" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -465,27 +473,27 @@
               <div class="col-md-6">
                 <p><strong>UDM Smartphone Setting<br>UDM智能手機設定</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/iyKjvl0YfDs(1).html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/iyKjvl0YfDs" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
               <div class="col-md-6">
                 <p><strong>Wireless Cloud Management<br>UDM 無線解決方案雲端管理</strong></p>
                 <div class="videobox">
-                  <iframe src="./JP ESG_files/QiCgT0_Revc(1).html" frameborder="0" allowfullscreen=""></iframe>
+                  <iframe src="https://www.youtube.com/embed/QiCgT0_Revc" frameborder="0" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
           </div>
-          
-          
-          
-      
-      
-      
+          </body>
+          </html>
+          <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>My Page</title>
       <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="./JP ESG_files/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       <style>
         .link-container {
           display: flex;
@@ -514,29 +522,29 @@
           border-radius: 50%; /* Circular images */
         }
       </style>
-      
-      
+      </head>
+      <body>
       
       <div class="container mt-3">
         <div class="row">
           <div class="col-md-6">
             <div class="link-container">
-              <img src="./JP ESG_files/Blogger.jpg" alt="My Blog">
+              <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213571&authkey=%21AOirEeL9tE2PYe4" alt="My Blog">
               <a href="https://jackyimba.blogspot.com/">Visit My Blog</a>
             </div>
             <div class="link-container">
-              <img src="./JP ESG_files/66" alt="PIXNET"> <!-- Placeholder image, replace with actual image URL -->
-              <a href="https://udmjpesg520.pixnet.net/blog/post/134630971?utm_source=PIXNET&amp;utm_medium=pcard_article&amp;utm_content=4619365b7225bbd1b0">Visit PIXNET Blog</a>
+              <img src="https://via.placeholder.com/66" alt="PIXNET"> <!-- Placeholder image, replace with actual image URL -->
+              <a href="https://udmjpesg520.pixnet.net/blog/post/134630971?utm_source=PIXNET&utm_medium=pcard_article&utm_content=4619365b7225bbd1b0">Visit PIXNET Blog</a>
             </div>
           </div>
         </div>
       </div>
       
-      
-      
-      </div>.<p></p>
-    。<p></p>
-    
+      </body>
+      </html>
+      </div>.</p>
+    </div>。</p>
+    </div>
     <div id="download-zh" class="content-container">
         <h1>下載</h1>
         <p>下載不同方案。</p>
@@ -551,7 +559,7 @@
     </div>
 
     <footer>
-        <p>© 2024 JP ESG. All rights reserved.</p>
+        <p>&copy; 2024 JP ESG. All rights reserved.</p>
     </footer>
 
     <script>
@@ -595,6 +603,5 @@
             selectedContainer.classList.add('active');
         }
     </script>
-
-
-</body></html>
+</body>
+</html>
