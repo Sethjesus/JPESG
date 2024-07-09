@@ -9,6 +9,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .navbar {
@@ -62,6 +65,7 @@
         .content-container {
             display: none;
             padding: 20px;
+            flex: 1;
         }
 
         .content-container.active {
@@ -72,22 +76,20 @@
             text-align: center;
             background-color: #d4edda;
             padding: 10px 0;
-            position: fixed;
             width: 100%;
-            bottom: 0;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-          <img src="https://github.com/Sethjesus/Jacky/blob/main/Logo.jpg?raw=true" alt="JP ESG Logo">
-
+            <img src="https://github.com/Sethjesus/Jacky/blob/main/Logo.jpg?raw=true" alt="JP ESG Logo">
         </div>
         <ul class="nav-links" id="nav-links-en">
             <li><a onclick="showContent('home-en')">Home</a></li>
             <li><a onclick="showContent('solution-en')">Solution</a></li>
-            <li><a onclick="showContent('video-en')">News&Events</a></li>
+            <li><a onclick="showContent('news-en')">News&Events</a></li>
             <li><a onclick="showContent('download-en')">Download</a></li>
             <li><a onclick="showContent('consult-en')">Consult</a></li>
             <li><a onclick="showContent('contact-en')">Contact</a></li>
@@ -95,7 +97,7 @@
         <ul class="nav-links" id="nav-links-zh" style="display: none;">
             <li><a onclick="showContent('home-zh')">首頁</a></li>
             <li><a onclick="showContent('solution-zh')">解決方案</a></li>
-            <li><a onclick="showContent('video-zh')">新聞發布</a></li>
+            <li><a onclick="showContent('news-zh')">新聞發布</a></li>
             <li><a onclick="showContent('download-zh')">下載</a></li>
             <li><a onclick="showContent('consult-zh')">諮詢</a></li>
             <li><a onclick="showContent('contact-zh')">聯絡方式</a></li>
@@ -108,9 +110,16 @@
 
     <div id="home-en" class="content-container active">
         <h1>Welcome to JP ESG</h1>
-        <!DOCTYPE html>
-<html>
+               <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js and Bootstrap Slideshow</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <style>
         .slideshow-container {
             width: 100%;
@@ -126,45 +135,88 @@
             height: 100%;
             display: none; /* Hide images initially */
         }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .active {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <div class="slideshow-container">
-        <!-- Only images with class 'slide' will be part of the slideshow -->
-        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%201.jpg?raw=true" style="display:block;">
-        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%202.jpg?raw=true">
-        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%203.jpg?raw=true">
-        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%204.jpg?raw=true">
-        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%205.jpg?raw=true">
-        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%206.jpg?raw=true">
-        <img class="slide" src="https://github.com/Sethjesus/Photo/blob/main/abundance%207.jpg?raw=true">
+    <div id="app">
+        <div class="slideshow-container">
+            <div class="slide" v-for="(slide, index) in slides" :key="index" :class="{ active: index === currentSlide }">
+                <img :src="slide" :alt="'Slide ' + (index + 1)">
+            </div>
+        </div>
+        <div class="controls text-center mt-3">
+            <button class="btn btn-primary" @click="prevSlide">Previous</button>
+            <button class="btn btn-primary" @click="nextSlide">Next</button>
+            <button class="btn btn-danger" @click="stopSlideshow">Stop</button>
+            <button class="btn btn-success" @click="startSlideshow">Start</button>
+        </div>
     </div>
 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
-        let slides = document.getElementsByClassName("slide"); // Only select elements with the class 'slide'
-        let slideIndex = 0;
-
-        function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+        new Vue({
+            el: '#app',
+            data: {
+                slides: [
+                    "https://github.com/Sethjesus/Photo/blob/main/abundance%201.jpg?raw=true",
+                    "https://github.com/Sethjesus/Photo/blob/main/abundance%202.jpg?raw=true",
+                    "https://github.com/Sethjesus/Photo/blob/main/abundance%203.jpg?raw=true",
+                    "https://github.com/Sethjesus/Photo/blob/main/abundance%204.jpg?raw=true",
+                    "https://github.com/Sethjesus/Photo/blob/main/abundance%205.jpg?raw=true",
+                    "https://github.com/Sethjesus/Photo/blob/main/abundance%206.jpg?raw=true",
+                    "https://github.com/Sethjesus/Photo/blob/main/abundance%207.jpg?raw=true"
+                ],
+                currentSlide: 0,
+                interval: null
+            },
+            methods: {
+                showSlides() {
+                    this.currentSlide++;
+                    if (this.currentSlide >= this.slides.length) {
+                        this.currentSlide = 0;
+                    }
+                },
+                nextSlide() {
+                    this.stopSlideshow();
+                    this.showSlides();
+                    this.startSlideshow();
+                },
+                prevSlide() {
+                    this.stopSlideshow();
+                    this.currentSlide--;
+                    if (this.currentSlide < 0) {
+                        this.currentSlide = this.slides.length - 1;
+                    }
+                    this.startSlideshow();
+                },
+                stopSlideshow() {
+                    clearInterval(this.interval);
+                },
+                startSlideshow() {
+                    this.stopSlideshow(); // Clear any existing intervals
+                    this.interval = setInterval(this.showSlides, 3000);
+                }
+            },
+            mounted() {
+                this.startSlideshow();
             }
-            slideIndex++;
-            if (slideIndex >= slides.length) {
-                slideIndex = 0; // Loop back to the first image
-            }
-            slides[slideIndex].style.display = "block"; // Show the next image
-            setTimeout(showSlides, 3000); // Change image every 3000 milliseconds (3 seconds)
-        }
-
-        window.onload = showSlides; // Start the slideshow once the window has loaded
+        });
     </script>
 </body>
 </html>
-
-        
-        
-
-          <!DOCTYPE html>
+<!DOCTYPE html>
           <html lang="en">
           <head>
               <meta charset="UTF-8">
@@ -211,7 +263,7 @@
         <h1>Solution</h1>
         <p>Details about our solutions.</p>
     </div>
-    <div id="video-en" class="content-container">
+    <div id="news-en" class="content-container">
       <h1>JP ESG Press Release</h1>
       <!DOCTYPE html>
       <html lang="en">
@@ -285,296 +337,17 @@
       </body>
       </html>
 
-
-
-
-      </div>.</p>
     </div>
-    <div id="download-en" class="content-container">
-        <h1>Download</h1>
-        <p>Download our resources.</p>
+    <div id="solution-en" class="content-container">
+        <h1>Solution</h1>
+        <p>Details about our solutions.</p>
     </div>
-    <div id="consult-en" class="content-container">
-        <h1>Consult</h1>
-        <p> <!DOCTYPE html>
-          <html lang="en">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Q&A Form</title>
-          </head>
-          <body>
-              <h1>Submit Your Question</h1>
-              <form action="mailto:401.esg@udmgroup.com" method="post" enctype="text/plain">
-                  <label for="name">Name:</label>
-                  <input type="text" id="name" name="name"><br><br>
-          
-                  <label for="email">Email:</label>
-                  <input type="email" id="email" name="email"><br><br>
-          
-                  <label for="question">Your Question:</label>
-                  <textarea id="question" name="question"></textarea><br><br>
-          
-                  <input type="submit" value="Send">
-              </form>
-          </body>
-          </html>
-          </div></p>
-    </div>
-    <div id="contact-en" class="content-container">
-        <h1>Contact</h1>
-        <p>Contact us for more information.</p>
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-</head>
-<body>
-    <header>
-        <h1>Contact Us</h1>
-    </header>
-    <section>
-        <h2>UDM Group Technology Co., Ltd.</h2>
-        <p><strong>Address:</strong> 12F.-1, No.872, Zhongzheng Rd., Zhonghe Dist., New Taipei City 235, Taiwan (R.O.C.)</p>
-        <p><strong>Telephone:</strong> +886-2-66202388</p>
-        <p><strong>Fax:</strong> +886-2-66202720</p>
-    </section>
-    <section>
-        <h2>Location Map</h2>
-        <!-- Embed Google Maps for the address -->
-        <iframe
-            src="https://www.google.com/maps/embed/v1/place?q=12F.-1,%20No.872,%20Zhongzheng%20Rd.,%20Zhonghe%20Dist.,%20New%20Taipei%20City%20235,%20Taiwan&key=YOUR_API_KEY"
-            width="600"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-        </iframe>
-    </section>
-    <footer>
-        <p>Copyright &copy; 2017 All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
+    <div id="news-zh" class="content-container">
+        <h1>JP ESG Press Release</h1>
+    <!-- Content goes here -->
 
-    </div>
-
-    <div id="home-zh" class="content-container">
-        <h1>歡迎光臨JP ESG</h1>
-        <p><!DOCTYPE html>
-          <html lang="zh">
-          <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>JP ESG 關於我們</title>
-              <style>
-                  h1 {
-                      color: blue; /* 設置H1標籤的字體顏色為藍色 */
-                  }
-              </style>
-          </head>
-          <body>
-            <div style="display: flex;  align-items: center;">
-                <img src="https://github.com/Sethjesus/Photo/blob/main/ESG%20image.jpg?raw=true" alt="ESG Image">
-                <img src="https://github.com/Sethjesus/Photo/blob/main/EMS.jpg?raw=true" alt="EMS Image" style="width: 300px; height: 300px;">
-            </div>
-            
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>翻頁效果</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        margin: 0;
-                        padding: 0;
-                        background-color: #f0f0f0;
-                    }
-                    header {
-                        background-color: #333;
-                        color: white;
-                        padding: 10px;
-                        text-align: center;
-                        font-size: 24px;
-                    }
-                    .content {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        min-height: calc(100vh - 50px);
-                    }
-                    .book-container {
-                        position: relative;
-                        width: 700px;
-                        height: 1000px;
-                        perspective: 1500px;
-                        margin: 20px 0;
-                    }
-                    .book {
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        transform-style: preserve-3d;
-                        transform-origin: left;
-                        transition: transform 1s;
-                    }
-                    .page {
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        background-color: white;
-                        border: 1px solid #ccc;
-                        box-shadow: 0 0 5px rgba(0,0,0,0.3);
-                        backface-visibility: hidden;
-                        transform-origin: left;
-                        transition: transform 1s;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    .page img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                    .controls {
-                        margin-top: 20px;
-                    }
-                    button {
-                        margin: 0 10px;
-                        padding: 10px 20px;
-                        font-size: 16px;
-                    }
-                </style>
-            </head>
-            <body>
-                <header>
-                    景沛ESG 魔法寶典
-                </header>
-                <div class="content">
-                    <div class="book-container">
-                        <div class="book" id="book">
-                          <div class="page" id="page1"><img src="https://github.com/Sethjesus/Photo/blob/main/Coverpage.jpg?raw=true" alt="Page 1"></div>
-                          <div class="page" id="page2"><img src="https://github.com/Sethjesus/Photo/blob/main/Brochure1.jpg?raw=true" alt="Page 2"></div>
-                          <div class="page" id="page3"><img src="https://github.com/Sethjesus/Photo/blob/main/Brochure2.jpg?raw=true" alt="Page 3"></div>
-                          <div class="page" id="page4"><img src="https://github.com/Sethjesus/Photo/blob/main/Book1.jpg?raw=true" alt="Page 4"></div>
-                          <div class="page" id="page5"><img src="https://github.com/Sethjesus/Photo/blob/main/Book2.jpg?raw=true" alt="Page 5"></div>
-                          <div class="page" id="page6"><img src="https://github.com/Sethjesus/Photo/blob/main/Book3.jpg?raw=true" alt="Page 6"></div>
-                          <div class="page" id="page6"><img src="https://github.com/Sethjesus/Photo/blob/main/Book4.jpg?raw=true" alt="Page 7"></div>
-                          <div class="page" id="page7"><img src="https://github.com/Sethjesus/Photo/blob/main/Book5.jpg?raw=true" alt="Page 8"></div>
-      
-      
-                  
-                            <!-- Pages defined here -->
-                        </div>
-                    </div>
-                    <div class="controls">
-                        <button id="prev">上一頁</button>
-                        <button id="next">下一頁</button>
-                        <button id="stop">停止</button>
-                        <button id="toCover">回封面</button>
-                    </div>
-                </div>
-                <script>
-                    let currentPage = 0;
-                    const totalPages = 8; // Update this number based on the actual total pages
-                    let interval;
-            
-                    function showPage(page) {
-                        const pages = document.querySelectorAll('.page');
-                        pages.forEach((pageElem, index) => {
-                            pageElem.style.transform = (index === page) ? "rotateY(0deg)" : "rotateY(-180deg)";
-                        });
-                    }
-            
-                    function nextPage() {
-                        currentPage = (currentPage + 1) % totalPages;
-                        showPage(currentPage);
-                    }
-            
-                    function prevPage() {
-                        currentPage = (currentPage - 1 + totalPages) % totalPages;
-                        showPage(currentPage);
-                    }
-            
-                    function startAutoPageTurn() {
-                        if (interval) clearInterval(interval);
-                        interval = setInterval(nextPage, 8000);
-                    }
-            
-                    function stopAutoPageTurn() {
-                        clearInterval(interval);
-                        showPage(0); // Reset to first page flat when stopping
-                    }
-            
-                    function toCover() {
-                        showPage(0); // 顯示第一頁
-                        stopAutoPageTurn(); // 停止自動翻頁
-                        startAutoPageTurn(); // Restart auto-turning from the cover
-                    }
-            
-                    document.getElementById('next').addEventListener('click', function() {
-                        nextPage();
-                        startAutoPageTurn();
-                    });
-                    document.getElementById('prev').addEventListener('click', function() {
-                        prevPage();
-                        startAutoPageTurn();
-                    });
-                    document.getElementById('stop').addEventListener('click', stopAutoPageTurn);
-                    document.getElementById('toCover').addEventListener('click', toCover);
-            
-                    window.onload = function() {
-                        showPage(0); // Start with the first page flat
-                        startAutoPageTurn();
-                    };
-                </script>
-            </body>
-            </html>
-            
-                   
-            
-
-            
-
-              <h1>關於我們：</h1>
-              <h3>JP ESG 的故事 - 助力可持續未來</h3>
-              <p>在 JP ESG，我們的旅程始於對地球的深刻承諾和對未來的創新願景。認識到每一個行動都會影響我們的星球，我們開始致力於改變企業和個人的能耗方式。通過先進的能源監控和實現淨零碳排放的努力，
-                我們不僅是一家公司，更是致力於保護世界的運動。</p>
-              <h3>創新的起源</h3>
-              <p>JP ESG 的想法在一個秋天的晚上誕生，當時我們的創始人楊教授與學生Patty親眼目睹了能源浪費對當地社區的影響。夜晚的公園裡燈火通明，辦公室在工作人員離開後依然燈火通明。這種不必要的能源消耗
-                不僅浪費資源，還大大增加了碳排放。楊教授問自己，“如果我們能改變這一切呢？如果每個人都能高效地查看和管理他們的能耗呢？”</p>
-              <p>在這個想法的推動下，JP ESG 成立了，目的是開發智能、直觀的監控系統，這些系統可以輕鬆集成到任何家庭或企業中。這些系統不僅提供實時能耗的洞察，還指導用戶優化使用並減少碳足跡。</p>
-              <h3>能源監控的革命</h3>
-              <p>JP ESG 於2023年推出了其首個能源監控系統。這是一項革命性的技術，利用實時數據分析為用戶提供關於其能耗的可操作見解。用戶可以即時看到他們的能耗，識別高峰使用時間，並獲得量身定製的減少能耗的建議。</p>
-              <p>但我們並未止步於此。我們看到了通過將我們的技術與可再生能源源結合來影響更大變化的潛力。我們的系統開始幫助用戶不僅監控，還能無縫集成現有基礎設施，轉向更清潔的能源選項，如太陽能或風能。</p>
-              <h2>淨零願景</h2>
-              <p>隨著我們的技術進步，我們的雄心也隨之增長。JP ESG 承諾實現淨零碳未來，目標是在2030年前顯著減少全球碳排放。我們與環境科學家、政策制定者和地方社區合作，擴大我們的影響力。每售出一件產品，
-                都為全球植樹項目和可持續實踐研究做出貢獻。</p>
-              <h2>地球的守護者</h2>
-              <p>今天，JP ESG 不僅因其創新產品而聞名，還因其對地球的承諾而受到認可。我們不僅僅是技術提供者，更是地球的守護者。我們的持續倡議包括提高可持續生活意識的教育項目和鼓勵綠色生活方式的社區項目。</p>
-              <h2>加入我們</h2>
-              <p>我們在 JP ESG 相信，保護地球需要集體行動。我們邀請您加入這一關鍵使命——無論是將 JP ESG 的監控系統融入您的生活，參與社區可持續項目，還是做出更明智的能源選擇。每一個努力都很重要。</p>
-              <p>一起，我們可以打造一個可持續的未來，確保我們的星球在未來世代仍然充滿活力和生機。讓我們一瓦一瓦地推動變革。加入我們 JP ESG，每一天都是邁向更清潔、更綠色星球的一步。</p>
-              <!-- 更多內容 -->
-          </body>
-          </html>
-          。</p>
-    </div>
-    <div id="solution-zh" class="content-container">
-        <h1>解决方案</h1>
-        <p>我們解決方案。</p>
-    </div>
-    <div id="video-zh" class="content-container">
-      <h1>景沛重磅新聞</h1>
-      <p> 
-        <!DOCTYPE html>
+   
+         <!DOCTYPE html>
         <html lang="zh">
         <head>
         <meta charset="UTF-8">
@@ -650,6 +423,462 @@
       </div>.</p>
     </div>。</p>
     </div>
+</div>
+    </div>
+    <div id="download-en" class="content-container">
+        <h1>Download</h1>
+        <p>Download our resources.</p>
+    </div>
+    <div id="consult-en" class="content-container">
+        <h1>Consult</h1>
+        <p>Consulting services...</p>
+    </div>
+    <div id="contact-en" class="content-container">
+        <h1>Contact</h1>
+        <p>Contact us for more information.</p>
+    </div>
+
+    <div id="home-zh" class="content-container">
+        <h1>歡迎光臨JP ESG</h1>
+                   
+        <!DOCTYPE html>
+        <html lang="zh">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>JP ESG 關於我們</title>
+            <style>
+                h1 {
+                    color: blue; /* 設置H1標籤的字體顏色為藍色 */
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f0f0f0;
+                }
+                header {
+                    background-color: #333;
+                    color: white;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 24px;
+                }
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: calc(100vh - 50px);
+                    position: relative;
+                }
+                .book-container {
+                    position: relative;
+                    width: 750px;
+                    height: 1000px;
+                    perspective: 1500px;
+                    margin: 20px 0;
+                }
+                .book {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    transform-style: preserve-3d;
+                    transform-origin: left;
+                    transition: transform 1s;
+                }
+                .page {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: white;
+                    border: 1px solid #ccc;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+                    backface-visibility: hidden;
+                    transform-origin: left;
+                    transition: transform 1s;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .page img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .controls {
+                    margin-top: 20px;
+                }
+                button {
+                    margin: 0 10px;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                }
+                .spinner {
+                    width: 100px;
+                    height: 100px;
+                    background-image: url('https://github.com/Sethjesus/Photo/blob/main/wand.jpg?raw=true');
+                    background-size: cover;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50px) rotate(0deg); /* Initial position */
+                    animation: sway 2s ease-in-out infinite;
+                }
+                .right-image {
+                    float: right;
+                    margin: 10px;
+                    width: 150px;
+                    height: auto;
+                }
+                .marquee {
+                    width: 100%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    box-sizing: border-box;
+                }
+                .marquee span {
+                    display: inline-block;
+                    padding-left: 100%;
+                    animation: marquee 10s linear infinite;
+                }
+                @keyframes sway {
+                    0%, 100% { transform: translateX(-50px) rotate(-10deg); }
+                    50% { transform: translateX(-50px) rotate(10deg); }
+                }
+                @keyframes marquee {
+                    0% { transform: translate(0, 0); }
+                    100% { transform: translate(-100%, 0); }
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                景沛ESG 國家政策輔導
+            </header>
+            <div class="content">
+                <div style="display: flex; align-items: center;">
+                    <img src="https://github.com/Sethjesus/Photo/blob/main/ESG%20image.jpg?raw=true" alt="ESG Image">
+                    <img src="https://github.com/Sethjesus/Photo/blob/main/EMS.jpg?raw=true" alt="EMS Image" style="width: 300px; height: 300px;">
+                </div>
+                <div class="spinner"></div>  <!-- Spinning circle added here -->
+                <h1> 景沛ESG 魔法寶典</h1>
+                <div class="book-container">
+                    <div class="book" id="book">
+                        <div class="page" id="page1"><img src="https://github.com/Sethjesus/Photo/blob/main/Coverpage.jpg?raw=true" alt="Page 1"></div>
+                        <div class="page" id="page2"><img src="https://github.com/Sethjesus/Photo/blob/main/Brochure1.jpg?raw=true" alt="Page 2"></div>
+                        <div class="page" id="page3"><img src="https://github.com/Sethjesus/Photo/blob/main/Brochure2.jpg?raw=true" alt="Page 3"></div>
+                        <div class="page" id="page4"><img src="https://github.com/Sethjesus/Photo/blob/main/Brochure3.jpg?raw=true" alt="Page 4"></div>
+                        <div class="page" id="page5"><img src="https://github.com/Sethjesus/Photo/blob/main/Book1.jpg?raw=true" alt="Page 5"></div>
+                        <div class="page" id="page6"><img src="https://github.com/Sethjesus/Photo/blob/main/Book2.jpg?raw=true" alt="Page 6"></div>
+                        <div class="page" id="page7"><img src="https://github.com/Sethjesus/Photo/blob/main/Book3.jpg?raw=true" alt="Page 7"></div>
+                        <div class="page" id="page8"><img src="https://github.com/Sethjesus/Photo/blob/main/Book4.jpg?raw=true" alt="Page 8"></div>
+                        <div class="page" id="page9"><img src="https://github.com/Sethjesus/Photo/blob/main/Book5.jpg?raw=true" alt="Page 9"></div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="prev">上一頁</button>
+                    <button id="next">下一頁</button>
+                    <button id="stop">停止</button>
+                    <button id="toCover">回封面</button>
+                </div>
+              
+                <div class="marquee"><span> <img src="https://github.com/Sethjesus/Photo/blob/main/Fairy.jpg?raw=true" alt="Right Image" class="right-image"> <!-- Right side image --></span></div>
+            </div>
+            <script>
+                let currentPage = 0;
+                const totalPages = 9; // Update this number based on the actual total pages
+                let interval;
+        
+                function showPage(page) {
+                    const pages = document.querySelectorAll('.page');
+                    pages.forEach((pageElem, index) => {
+                        pageElem.style.transform = (index === page) ? "rotateY(0deg)" : "rotateY(-180deg)";
+                    });
+                }
+        
+                function nextPage() {
+                    currentPage = (currentPage + 1) % totalPages;
+                    showPage(currentPage);
+                }
+        
+                function prevPage() {
+                    currentPage = (currentPage - 1 + totalPages) % totalPages;
+                    showPage(currentPage);
+                }
+        
+                function startAutoPageTurn() {
+                    if (interval) clearInterval(interval);
+                    interval = setInterval(nextPage, 8000);
+                }
+        
+                function stopAutoPageTurn() {
+                    clearInterval(interval);
+                    showPage(0); // Reset to first page flat when stopping
+                }
+        
+                function toCover() {
+                    showPage(0); // 顯示第一頁
+                    stopAutoPageTurn(); // 停止自動翻頁
+                    startAutoPageTurn(); // Restart auto-turning from the cover
+                }
+        
+                document.getElementById('next').addEventListener('click', function() {
+                    nextPage();
+                    startAutoPageTurn();
+                });
+                document.getElementById('prev').addEventListener('click', function() {
+                    prevPage();
+                    startAutoPageTurn();
+                });
+                document.getElementById('stop').addEventListener('click', stopAutoPageTurn);
+                document.getElementById('toCover').addEventListener('click', toCover);
+        
+                window.onload = function() {
+                    showPage(0); // Start with the first page flat
+                    startAutoPageTurn();
+                };
+            </script>
+        </body>
+        </html>
+        
+
+        
+
+  
+                <h1>關於我們：</h1>
+                <h3>JP ESG 的故事 - 助力可持續未來</h3>
+                <p>在 JP ESG，我們的旅程始於對地球的深刻承諾和對未來的創新願景。認識到每一個行動都會影響我們的星球，我們開始致力於改變企業和個人的能耗方式。通過先進的能源監控和實現淨零碳排放的努力，
+                  我們不僅是一家公司，更是致力於保護世界的運動。</p>
+                <h3>創新的起源</h3>
+                <p>JP ESG 的想法在一個秋天的晚上誕生，當時我們的創始人楊教授與學生Patty親眼目睹了能源浪費對當地社區的影響。夜晚的公園裡燈火通明，辦公室在工作人員離開後依然燈火通明。這種不必要的能源消耗
+                  不僅浪費資源，還大大增加了碳排放。楊教授問自己，“如果我們能改變這一切呢？如果每個人都能高效地查看和管理他們的能耗呢？”</p>
+                <p>在這個想法的推動下，JP ESG 成立了，目的是開發智能、直觀的監控系統，這些系統可以輕鬆集成到任何家庭或企業中。這些系統不僅提供實時能耗的洞察，還指導用戶優化使用並減少碳足跡。</p>
+                <h3>能源監控的革命</h3>
+                <p>JP ESG 於2023年推出了其首個能源監控系統。這是一項革命性的技術，利用實時數據分析為用戶提供關於其能耗的可操作見解。用戶可以即時看到他們的能耗，識別高峰使用時間，並獲得量身定製的減少能耗的建議。</p>
+                <p>但我們並未止步於此。我們看到了通過將我們的技術與可再生能源源結合來影響更大變化的潛力。我們的系統開始幫助用戶不僅監控，還能無縫集成現有基礎設施，轉向更清潔的能源選項，如太陽能或風能。</p>
+                <h2>淨零願景</h2>
+                <p>隨著我們的技術進步，我們的雄心也隨之增長。JP ESG 承諾實現淨零碳未來，目標是在2030年前顯著減少全球碳排放。我們與環境科學家、政策制定者和地方社區合作，擴大我們的影響力。每售出一件產品，
+                  都為全球植樹項目和可持續實踐研究做出貢獻。</p>
+                <h2>地球的守護者</h2>
+                <p>今天，JP ESG 不僅因其創新產品而聞名，還因其對地球的承諾而受到認可。我們不僅僅是技術提供者，更是地球的守護者。我們的持續倡議包括提高可持續生活意識的教育項目和鼓勵綠色生活方式的社區項目。</p>
+                <h2>加入我們</h2>
+                <p>我們在 JP ESG 相信，保護地球需要集體行動。我們邀請您加入這一關鍵使命——無論是將 JP ESG 的監控系統融入您的生活，參與社區可持續項目，還是做出更明智的能源選擇。每一個努力都很重要。</p>
+                <p>一起，我們可以打造一個可持續的未來，確保我們的星球在未來世代仍然充滿活力和生機。讓我們一瓦一瓦地推動變革。加入我們 JP ESG，每一天都是邁向更清潔、更綠色星球的一步。</p>
+                <!-- 更多內容 -->
+            </body>
+            </html>
+            。</p>
+      </div>
+    <div id="solution-zh" class="content-container">
+        <h1>冰水主機解决方案</h1>
+
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiller System Slideshow</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .slide {
+            display: none;
+            width: 1280px; /* Set the width of the slide */
+            height: 720px; /* Set the height of the slide */
+        }
+        .slide img {
+            width: 70%;
+            height: 70%;
+            object-fit: cover;
+        }
+        .active {
+            display: block;
+        }
+        .swing {
+            position: relative;
+            display: inline-block;
+            width: 200px; /* Set the desired width */
+            height: 200px; /* Set the desired height */
+            animation: swing 2s infinite;
+        }
+        @keyframes swing {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-10deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .container-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div id="slideshowApp" class="container mt-5">
+    <div class="container-flex">
+        <div class="slideshow-container">
+            <div v-for="(image, index) in images" :key="index" :class="{'slide': true, 'active': index === currentSlide}">
+                <img :src="image" :alt="'Chiller System Slide ' + (index + 1)">
+            </div>
+        </div>
+        <div class="swing">
+            <img src="https://github.com/Sethjesus/Photo/blob/main/Chillier.jpg?raw=true" alt="Swinging Chiller Image">
+        </div>
+    </div>
+    <div class="controls mt-3 text-center">
+        <button class="btn btn-primary" @click="prevSlide">上一頁</button>
+        <button class="btn btn-primary" @click="nextSlide">下一頁</button>
+        <button class="btn btn-danger" @click="stopSlideshow">停止</button>
+        <button class="btn btn-success" @click="startSlideshow">開始</button>
+        <button class="btn btn-info" @click="firstSlide">首頁</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+new Vue({
+    el: '#slideshowApp',
+    data: {
+        images: [
+            'https://github.com/Sethjesus/Photo/blob/main/C1.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C2.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C3.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C4.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C5.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C6.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C7.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C8.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C9.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C10.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C11.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C12.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C13.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C14.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C15.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C16.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C17.jpg?raw=true',
+            'https://github.com/Sethjesus/Photo/blob/main/C18.jpg?raw=true',
+            // Add more images as needed...
+        ],
+        currentSlide: 0,
+        interval: null
+    },
+    methods: {
+        nextSlide() {
+            this.currentSlide = (this.currentSlide + 1) % this.images.length;
+        },
+        prevSlide() {
+            this.currentSlide = (this.currentSlide + this.images.length - 1) % this.images.length;
+        },
+        stopSlideshow() {
+            clearInterval(this.interval);
+        },
+        startSlideshow() {
+            this.stopSlideshow();
+            this.interval = setInterval(this.nextSlide, 3000);
+        },
+        firstSlide() {
+            this.currentSlide = 0;
+        }
+    },
+    mounted() {
+        this.startSlideshow();
+    }
+});
+</script>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<div id="news-zh" class="content-container">
+    <h1>JP ESG Press Release</h1>
+    <!-- Content goes here -->
+
+   
+         <!DOCTYPE html>
+        <html lang="zh">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CBAM 2023 - 2026</title>
+        <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4;
+          color: #333;
+        }
+        
+        header {
+          background-color: #007BFF;
+          color: #fff;
+          padding: 10px 20px;
+          text-align: center;
+        }
+        
+        article {
+          max-width: 800px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+        }
+        
+        section {
+          margin-bottom: 20px;
+        }
+        </style>
+        </head>
+        <body>
+        <header>
+          <h1>碳邊境調整機制(CBAM)概覽</h1>
+        </header>
+        
+        <article>
+          <section>
+            <h2>介紹</h2>
+            <p>碳邊境調整機制旨在防止碳洩漏並促進全球碳排放減少。</p>
+          </section>
+          <section>
+            <h2>2023年至2025年實施</h2>
+            <p>CBAM的初始階段專注於監管調整和逐步包括進口部門。以下是詳情：</p>
+            <ul>
+              <li>2023年：引入和測試階段。</li>
+              <li>2024年：擴展至更多行業。</li>
+              <li>2025年：全面執行開始。</li>
+            </ul>
+          </section>
+          <section>
+            <h2>政策</h2>
+            <p>CBAM的具體政策，包括對高碳產品的關稅和調整。</p>
+          </section>
+          <section>
+            <h2>解決方案</h2>
+            <p>滿足CBAM規定的創新方法，包括技術進步和戰略合作。</p>
+          </section>
+          <section>
+            <h2>展望2026年</h2>
+            <p>對2026年的預測和預期發展，包括進一步的國際合作。</p>
+          </section>
+        </article>
+        
+        </body>
+        </html>
+        </p>
+
+      </div>.</p>
+    </div>。</p>
+    </div>
+</div>
     <div id="download-zh" class="content-container">
         <h1>下載</h1>
         <p>下載不同方案。</p>
@@ -664,7 +893,12 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 JP ESG. All rights reserved.</p>
+        <div id="footer-en">
+            <p>&copy; 2024 JP ESG. All rights reserved.</p>
+        </div>
+        <div id="footer-zh" style="display: none;">
+            <p>&copy; 2024 景沛ESG。版權所有。</p>
+        </div>
     </footer>
 
     <script>
@@ -677,6 +911,9 @@
             const enContainers = document.querySelectorAll('[id$="-en"]');
             const zhContainers = document.querySelectorAll('[id$="-zh"]');
 
+            const footerEn = document.getElementById('footer-en');
+            const footerZh = document.getElementById('footer-zh');
+
             if (lang === 'en') {
                 enLinks.style.display = 'flex';
                 zhLinks.style.display = 'none';
@@ -687,6 +924,9 @@
 
                 enContainers.forEach(container => container.classList.add('active'));
                 zhContainers.forEach(container => container.classList.remove('active'));
+
+                footerEn.style.display = 'block';
+                footerZh.style.display = 'none';
             } else {
                 enLinks.style.display = 'none';
                 zhLinks.style.display = 'flex';
@@ -697,6 +937,9 @@
 
                 enContainers.forEach(container => container.classList.remove('active'));
                 zhContainers.forEach(container => container.classList.add('active'));
+
+                footerEn.style.display = 'none';
+                footerZh.style.display = 'block';
             }
         }
 
@@ -710,5 +953,3 @@
     </script>
 </body>
 </html>
-
-
