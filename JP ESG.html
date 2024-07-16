@@ -749,6 +749,7 @@
 
     <div id="solution-zh" class="content-container">
         <h1>解決方案</h1>
+        <div>
         <p><!DOCTYPE html>
             <html lang="en">
             <head>
@@ -873,6 +874,349 @@
             </html>
             </p>
     </div>
+    <!DOCTYPE html>
+    <html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Gallery</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .image-window {
+                height: 300px; /* Increased height to accommodate text below the image */
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                overflow: hidden;
+            }
+            .image-window img {
+                transition: transform 0.5s ease; /* Smooth transform effect */
+                max-width: 100%;
+                max-height: 80%; /* Adjusted to leave space for text */
+            }
+            .image-window img:hover {
+                transform: scale(1.1); /* Scale up image on hover */
+            }
+            .image-desc {
+                text-align: center;
+                font-size: 1.0em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app" class="container">
+            <h1 class="text-center mt-4">景沛藝廊</h1>
+            <div class="景沛藝廊">
+                <h2>無線方案</h2>
+                <div class="row">
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/GW06.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/GW06.jpg?raw=true" alt="GW06 (藍芽對WiFi 2.4G) Gateway">
+                        <div class="image-desc">GW06 (BLE to WiFi 2.4G) Gateway</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/GW06-03.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/GW06-03.jpg?raw=true" alt="GW06-03/GW08-03 藍芽 對Modbus TCP Gateway">
+                        <div class="image-desc">GW06-03/GW08-03 藍芽 對Modbus TCP Gateway</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/GW08.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/GW08.jpg?raw=true" alt="GW08 窄頻1G 對 wifi 2.4G Gateway">
+                        <div class="image-desc">GW08 窄頻1G 對 wifi 2.4G Gateway</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/RP01.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/RP01.jpg?raw=true" alt="RP01 (藍芽對窄頻配合GW08) Gateway">
+                        <div class="image-desc">RP01 (藍芽對窄頻配合GW08) Gateway</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CM02.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CM02.jpg?raw=true" alt="CM02 (交流0.6A 到100A Dia. 16mm)鉤表">
+                        <div class="image-desc">CM02 (交流0.6A 到100A Dia. 16mm)鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CM03.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CM03.jpg?raw=true" alt="CM03 (交流 2A到250A Dia.24mm)鉤表">
+                        <div class="image-desc">CM03 (交流 2A到250A Dia.24mm)鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CM04.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CM04.jpg?raw=true" alt="CM04 (交流 3A到350A Dia.24mm)鉤表">
+                        <div class="image-desc">CM04 (交流 3A到350A Dia.24mm)鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CM02-04.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CM02-04.jpg?raw=true" alt="CM02-04(交流 0.05A到15A Dia.16mm)鉤表">
+                        <div class="image-desc">CM02-04(交流 0.05A到15A Dia.16mm)鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CM02-06.png?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CM02-06.png?raw=true" alt="CM02-06(交流 0.001A到0.5A Dia.16mm)鉤表">
+                        <div class="image-desc">CM02-06(交流 0.001A到0.5A Dia.16mm)鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/FM03.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/FM03.jpg?raw=true" alt="FM02(交流2A到1000A Dia.80mm)軟線鉤表">
+                        <div class="image-desc">FM02(交流2A到1000A Dia.80mm)軟線鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/FM03.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/FM03.jpg?raw=true" alt="FM03(交流3A到2000A Dia.105mm)軟線鉤表">
+                        <div class="image-desc">FM03(交流3A到2000A Dia.105mm)軟線鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/FM03.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/FM03.jpg?raw=true" alt="FM04(交流5A到3000A Dia.180mm)軟線鉤表">
+                        <div class="image-desc">FM04(交流5A到3000A Dia.180mm)軟線鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CM03-05.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CM03-05.jpg?raw=true" alt="CM03-05(交流2A到250A Dia.24mm)環溫鉤表">
+                        <div class="image-desc">CM03-05(交流2A到250A Dia.24mm)環溫與電流</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CM04-05.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CM04-05.jpg?raw=true" alt="CM04-05 (交流 3A到350A Dia.36mm)環溫鉤表">
+                        <div class="image-desc">CM04-05(交流3A到350A Dia.36mm)環溫與電流</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CM02-07.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CM02-07.jpg?raw=true" alt="CM02-07 (直流0.4A到20A Dia.16mm)鉤表">
+                        <div class="image-desc">CM02-07(直流0.4A到20A Dia.16mm)鉤表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/TM01.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/TM01.jpg?raw=true" alt="TM01 (溫度量測 0 to 100 °C) 溫度計">
+                        <div class="image-desc">TM01(溫度量測0~100°C) 溫度計</div>
+                    </div>
+                    
+                    <div class="col-md-3 image-window" v-for="n in 20" key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/GW06-04.jpg?raw=true')">
+                   <img src="https://github.com/Sethjesus/Photo/blob/main/GW06-04.jpg?raw=true" alt="GW06-04 and GW08-04 Bluetooth to WiFi and Narrowband to WiFi Gateway">
+                   <div class="image-desc">GW06-04/GW08-04 藍芽對WiFi/窄頻對WiFi2.4G/5G/乙太</div>
+               </div>
+               
+                <div class="col-md-3 image-window" v-for="n in 20" :key="'ws' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/GW06-06.jpg?raw=true')">
+                    <img src="https://github.com/Sethjesus/Photo/blob/main/GW06-06.jpg?raw=true" alt="GW06-06 (Modbus RTU to Modbus TCP) Hook Meter">
+                    <div class="image-desc">GW06-06 (Modbus RTU to Modbus TCP) 特殊Gateway</div>
+                </div>
+            </div>
+            
+               
+                
+            </div>
+    
+            <div class="category">
+                <h2>有線方案</h2>
+                <div class="row">
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/SMB350-4.jpg?raw=true')">
+                       <img src="https://github.com/Sethjesus/Photo/blob/main/SMB350-4.jpg?raw=true" alt="SMB350-4三相智慧電表4組勾表">
+                       <div class="image-desc">SMB350-4三相智慧電表4組勾表</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/SMB350-8.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/SMB350-8.jpg?raw=true" alt="SMB350-8三相智慧電表4組勾表">
+                        <div class="image-desc">SMB350-8三相智慧電表4組勾表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/ACS35.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/ACS35.jpg?raw=true" alt="ACS35觸控式資料顯示頻">
+                        <div class="image-desc">ACS35觸控式資料顯示頻</div>
+                     </div>
+
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/PM200.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/PM200.jpg?raw=true" alt="PM200 三相智慧電表">
+                        <div class="image-desc">PM200 三相智慧電表</div>
+                     </div>
+
+                     
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/PM210.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/PM210.jpg?raw=true" alt="PM210 三相智慧電表 ">
+                        <div class="image-desc">PM210 三相智慧電表V<sub>Line</sub>, V<sub>Phase</sub>, KVAR, KW, PF,Hz,Kwh</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/PM250.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/PM250.jpg?raw=true" alt="PM250 三相智慧電表 ">
+                        <div class="image-desc">PM250 三相智慧電表V<sub>Line</sub>, A, KVAR, KW, PF,Hz,Kwh</div>
+                     </div>
+
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/TB%20Series.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/TB%20Series.jpg?raw=true" alt="TB 系系列100A~400A勾表 ">
+                        <div class="image-desc"><BR>TB 系系列100A~400A勾表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CT%20Series.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CT%20Series.jpg?raw=true" alt="CT 系列5A~200A勾表 ">
+                        <div class="image-desc"><BR>CT 系列5A~200A勾表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CT%20Series%20600.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CT%20Series%20600.jpg?raw=true" alt="CT 系列200A~600A勾表 ">
+                        <div class="image-desc"><BR>CT 系列200A~600A勾表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/SB%20Series.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/SB%20Series.jpg?raw=true" alt="SB系列5A~200A勾表 ">
+                        <div class="image-desc"><BR>SB系列5A~200A勾表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/TH.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/TH.jpg?raw=true" alt="TH系列直讀式智慧水表 ">
+                        <div class="image-desc">TH系列直讀式智慧水表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/WT.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/WT.jpg?raw=true" alt="WT系列法蘭直讀式智慧水表 ">
+                        <div class="image-desc">WT系列法蘭直讀式智慧水表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/AS%20Series.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/AS%20Series.jpg?raw=true" alt="AS系列脈衝式智慧水表 ">
+                        <div class="image-desc">AS系列脈衝式智慧水表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/AS%20Series%20Flange.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/AS%20Series%20Flange.jpg?raw=true" alt="AS系列法蘭脈衝式智慧水表 ">
+                        <div class="image-desc">AS系列法蘭脈衝式智慧水表</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Time%20metering.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Time%20metering.jpg?raw=true" alt="計時用電系統冷暖空調閥門HVAC ">
+                        <div class="image-desc">計時用電系統冷暖空調閥門HVAC</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Energy%20and%20water.png?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Energy%20and%20water.png?raw=true" alt="水電智慧電表系統 ">
+                        <div class="image-desc">水電智慧電表系統</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Meter%20with%20IC%20card.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Meter%20with%20IC%20card.jpg?raw=true" alt="智慧電表與IC卡 ">
+                        <div class="image-desc">智慧電表與IC卡</div>
+                     </div>
+
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Multiple.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Multiple.jpg?raw=true" alt="多用戶感應卡系統 ">
+                        <div class="image-desc"><BR>多用戶感應卡系統</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Ball%20Court.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Ball%20Court.jpg?raw=true" alt="球場收費系統">
+                        <div class="image-desc">球場收費系統</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Dispensing.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Dispensing.jpg?raw=true" alt="桌上型信用分配系統">
+                        <div class="image-desc">桌上型信用分配系統</div>
+                     </div>
+
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Data%20download.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Data%20download.jpg?raw=true" alt="資料下載系統">
+                        <div class="image-desc">資料下載系統</div>
+                     </div>
+
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Data%20download.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Data%20download.jpg?raw=true" alt="多種髂片選擇">
+                        <div class="image-desc">多種卡片選擇</div>
+                     </div>
+
+
+                   
+                </div>
+            </div>
+    
+            <div class="category">
+                <h2>空氣處理方案與其他</h2>
+                <div class="row">                   
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/SD.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/SD.jpg?raw=true" alt="SD 系列空氣偵測器">
+                        <div class="image-desc">SD 系列空氣偵測器</div>
+                     </div>
+                                                   
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/IAQS.jpg?raw=true')">
+                         <img src="https://github.com/Sethjesus/Photo/blob/main/IAQS.jpg?raw=true" alt="IAQS 多合一選擇TVOC,Temp,RH, CO2,PM2.5,HCHO,CO2,O3, PM10">
+                         <div class="image-desc">IAQS 多合一選擇TVOC,Temp,RH,<BR> CO2,PM2.5,<BR>HCHO,CO2,O<sub>3</sub>, PM10</div>
+                     </div>
+
+                     <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/G6S.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/G6S.jpg?raw=true" alt="G6S清淨風系列空氣清新系統">
+                        <div class="image-desc">G6S清淨風系列空氣清新系統</div>
+                    </div>
+
+                  
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CTR230D.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CTR230D.jpg?raw=true" alt="CTR230D 溫濕度CO2 偵測面板">
+                        <div class="image-desc">CTR230D 溫濕度CO<sub>2</sub> 偵測面板</div>
+                    </div>
+
+
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CTR230D-4.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CTR230D-4.jpg?raw=true" alt="CTR230-4 溫濕度,CO2,PM2.5 偵測面板">
+                        <div class="image-desc">CTR230D 溫濕度,CO<sub>2</sub>, PM2.5 偵測面板</div>
+                    </div>
+
+
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CTR230D-6.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CTR230D-6.jpg?raw=true" alt="CTR230-4 溫濕度,CO2,PM2.5 偵測面板">
+                        <div class="image-desc">CTR230D 溫濕度,CO<sub>2</sub>,CO, HCHO ,PM2.5 偵測面板</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/TV.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/TV.jpg?raw=true" alt="CTVP 偵測系統 CO2,HCHO, CO, PM2.5, PM10">
+                        <div class="image-desc">CTVP 偵測系統 CO2,HCHO, CO, PM2.5, PM10</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/CB.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/CB.jpg?raw=true" alt="CB 系列雲端系統RJ45, 4G,wifi, Modbus RTU, MQTT/Https">
+                        <div class="image-desc">CB 系列雲端系統RJ45, 4G,wifi, Modbus RTU, MQTT/Https</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/web.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/web.jpg?raw=true" alt="CB 系列雲端系統RJ45, 4G,wifi, Modbus RTU, MQTT/Https">
+                        <div class="image-desc">雲端服務</div>
+                    </div>
+
+                    <div class="col-md-3 image-window" v-for="n in 24" :key="'wd' + n" @click="openInNewWindow('https://github.com/Sethjesus/Photo/blob/main/Water%20leakage.jpg?raw=true')">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/Water%20leakage.jpg?raw=true" alt="MS系列漏水偵測">
+                        <div class="image-desc">MS系列漏水偵測</div>
+                    </div>
+
+
+
+</div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    wirelessSolutions: Array(20).fill().map((v, i) => ({ src: `https://via.placeholder.com/150x150?text=Wireless+${i + 1}` })),
+                    wiredSolutions: Array(24).fill().map((v, i) => ({ src: `https://via.placeholder.com/150x150?text=Wired+${i + 1}` })),
+                    iaqsAndOthers: Array(12).fill().map((v, i) => ({ src: `https://via.placeholder.com/150x150?text=IAQS+${i + 1}` }))
+                },
+                methods: {
+                    openInNewWindow(src) {
+                        window.open(src, '_blank', 'toolbar=0,location=0,menubar=0');
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    
+</div>
+
 
     <div id="news-zh" class="content-container">
         <h1>新聞發布</h1>
