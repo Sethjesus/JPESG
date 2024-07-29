@@ -741,7 +741,160 @@
         <h1>Download</h1>
         <p>
 
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Download Section</title>
+                <!-- Bootstrap CSS -->
+                <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+                <style>
+    
+                    body {
+                background-color: #f4f4f4;
+            }
+                    .header {
+                        background-color: #007BFF;
+                        color: white;
+                        padding: 10px 0;
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                    .download-link {
+                        margin: 5px 0;
+                    }
+                    .product-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px;
+            }
+            .product {
+                background-color: white;
+                border: 1px solid #ddd;
+                margin: 10px;
+                width: calc(25% - 20px);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease-in-out;
+            }
+            .product:hover {
+                transform: scale(1.05);
+            }
+            .product a {
+                color: #333;
+                text-decoration: none;
+                display: block;
+                padding: 20px;
+                text-align: center;
+            }
+            @media (max-width: 768px) {
+                .product {
+                    width: calc(50% - 20px);
+                }
+            }
+            @media (max-width: 480px) {
+                .product {
+                    width: calc(100% - 20px);
+                }
+            }
+      
+                </style>
+            </head>
+            <body>
+               
+                    <div id="app" class="container">
+                        <h1 class="header">Product Catalogue</h1>
+                        <div class="product-container">
+                            <div class="product">
+                                <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1SOLc5_J5zrWZEo?e=LlHb5z">UDM Wired EMS Solution</a>
+                            </div>
 
+                            <div class="product">
+                                <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1ohQKaa6cFxwHB8?e=CpwrRy">UDM Wireless-Product-Brochure</a>
+                            </div>
+                            <div class="product">
+                                <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1iUgxyzx5FOMwAy?e=LSNCcb">UDM Smart-Meter</a>
+                            </div>
+                            <div class="product">
+                                <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOngatPesPbYD_qb-g?e=Z8GuNe">UDM Gateway GW06-04</a>
+                            </div>
+    
+                            <div class="product">
+                                <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1YzyiLTXpMBHj4L?e=4uHEKG">EDM_Studio-electricity-charge-Solution</a>
+                            </div>
+                            
+                            <div class="product">
+                                <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1uizFGzfZsC1PVE?e=F517A6">UDM PSM-Profile</a>
+                            </div>
+    
+                            <div class="product">
+                                <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1d42rBnTkUKO6dW?e=gdyIbP">UDM Wired-Product-CT-Clamp</a>
+                            </div>
+    
+                            <div class="product">
+                                <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1l0cSBWCOYD700a?e=kaL7R9">UDM Water-Meter-Solution</a>
+                            </div>
+    
+    
+                        </div>
+                    </div>
+                
+                                
+                        
+                    <h1 class="header">Installation Guide</h1>
+                    <p class="text-center">
+                        <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOngatPesPbYD_qb-g?e=Z8GuNe" class="btn btn-success btn-lg">Gateway GW06/08</a>
+                    </p>
+                    <p class="text-center">
+                        <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1_07W-aBbU-IJH5?e=0sbAKb" class="btn btn-success btn-lg">Gateway with TCP Modbus</a>
+    
+                           
+                        
+                    </p>
+                    <h1 class="header">Certificate</h1>
+                    <p class="text-center">
+                        <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOlUc_dutl_8vXpHPy?e=yULEta" class="btn btn-info btn-lg">Smart Energy Meter COM2</a>
+                    </p>
+                    <p class="text-center">
+                        <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm2C9rpr6lXW9bLzm?e=Emxl46" class="btn btn-info btn-lg">Smart Energy Meter COM3/CM04</a>
+                    </p>
+                    <h1 class="header">Environmental Solutions PM2.5 & Air Quality</h1>
+                    <p class="text-center">
+                        <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOnB5Pekod3h7_6pRe?e=FOejQB" class="btn btn-warning btn-lg">Operation manual IAQS Series</a>
+                    </p>
+                </div>
+            
+                <!-- Vue.js -->
+                <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+                <!-- Bootstrap and Popper -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script>
+                    new Vue({
+                        el: '#app',
+                        data: {
+                            columns: [
+                                [
+                                    { label: 'Wired-EMS-Solution', url: 'https://1drv.ms/b/s!Ag83-ZLdP_aOm1SOLc5_J5zrWZEo?e=LlHb5z' },
+                                    { label: 'UDM Wireless-Product-Brochure', url: 'https://your_onedrive_link_to_udm_wireless_product_brochure' },
+                                    { label: 'UDM Smart-Meter', url: 'https://your_onedrive_link_to_udm_smart_meter' },
+                                    { label: 'UDM Wireless-Product-Package', url: 'https://your_onedrive_link_to_udm_wireless_product_package' },
+                                    { label: 'UDM Gateway GW06-04', url: 'https://your_onedrive_link_to_udm_gateway_gw06_04' }
+                                ],
+                                [
+                                    { label: 'EDM_studio-electricity-charge-Solution', url: 'https://your_onedrive_link_to_edm_studio_electricity_charge_solution' },
+                                    { label: 'UDM PSM-Profile', url: 'https://your_onedrive_link_to_udm_psm_profile' },
+                                    { label: 'UDM Wired-Product-CT-Clamp', url: 'https://your_onedrive_link_to_udm_wired_product_ct_clamp' },
+                                    { label: 'UDM Water-Meter-Solution', url: 'https://your_onedrive_link_to_udm_water_meter_solution' }
+                                ]
+                            ]
+                        }
+                    });
+                </script>
+            </body>
+            </html>
 
 
 
@@ -1848,8 +2001,178 @@
     
 
     <div id="download-zh" class="content-container">
-        <h1>下載</h1>
-        <p>Download our resources in Chinese...</p>
+        
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Download Section</title>
+            <!-- Bootstrap CSS -->
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+            <style>
+
+                body {
+            background-color: #f4f4f4;
+        }
+                .header {
+                    background-color: #007BFF;
+                    color: white;
+                    padding: 10px 0;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .download-link {
+                    margin: 5px 0;
+                }
+                .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            margin: 10px;
+            width: calc(25% - 20px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .product {
+                width: calc(100% - 20px);
+            }
+        }
+  
+            </style>
+        </head>
+        <body>
+           
+                <div id="app" class="container">
+                    <h1 class="header">產品目錄</h1>
+                    <div class="product-container">
+                        <div class="product">
+                            <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1SOLc5_J5zrWZEo?e=LlHb5z">有線EMS解決方案
+                            </a>
+                        </div>
+                        <div class="product">
+                            <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1ohQKaa6cFxwHB8?e=CpwrRy">無線EMS解決方案</a>
+                        </div>
+                        <div class="product">
+                            <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1iUgxyzx5FOMwAy?e=LSNCc">智慧電表系列</a>
+                        </div>
+                        <div class="product">
+                            <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOngatPesPbYD_qb-g?e=Z8GuNe">UDM閘道器GW06-04</a>
+                        </div>
+
+                        <div class="product">
+                            <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1YzyiLTXpMBHj4L?e=4uHEKG">EDM房租計費系統</a>
+                        </div>
+                        
+                        <div class="product">
+                            <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1uizFGzfZsC1PVE?e=F517A6">UDM產品行銷方案</a>
+                        </div>
+
+                        <div class="product">
+                            <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1d42rBnTkUKO6dW?e=gdyIbP">UDM有線方案電流鉤表</a>
+                        </div>
+
+                        <div class="product">
+                            <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1l0cSBWCOYD700a?e=kaL7R9">UDM智慧水表方案</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            
+                            
+                    
+                <h1 class="header">Installation Guide</h1>
+                <p class="text-center">
+                    <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOngatPesPbYD_qb-g?e=Z8GuNe" class="btn btn-success btn-lg">閘道器GW06/08</a>
+                </p>
+                <p class="text-center">
+                    <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm1_07W-aBbU-IJH5?e=0sbAKb" class="btn btn-success btn-lg">閘道器與TCP Modbus</a>
+
+                                       
+                </p>
+                <h1 class="header">Certificate</h1>
+                <p class="text-center">
+                    <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOlUc_dutl_8vXpHPy?e=yULEta" class="btn btn-info btn-lg">智慧鉤表COM2</a>
+                </p>
+                <p class="text-center">
+                    <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOm2C9rpr6lXW9bLzm?e=Emxl46" class="btn btn-info btn-lg">智慧鉤表COM3/CM04</a>
+                </p>
+                <h1 class="header">環境方案 PM2.5 & 空氣品質</h1>
+                <p class="text-center">
+                    <a href="https://1drv.ms/b/s!Ag83-ZLdP_aOnB5Pekod3h7_6pRe?e=FOejQB" class="btn btn-warning btn-lg">操作手冊IAQS系列</a>
+                </p>
+            </div>
+        
+            <!-- Vue.js -->
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+            <!-- Bootstrap and Popper -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script>
+                new Vue({
+                    el: '#app',
+                    data: {
+                        columns: [
+                            [
+                                { label: 'Wired-EMS-Solution', url: 'https://1drv.ms/b/s!Ag83-ZLdP_aOm1SOLc5_J5zrWZEo?e=LlHb5z' },
+                                { label: 'UDM Wireless-Product-Brochure', url: 'https://your_onedrive_link_to_udm_wireless_product_brochure' },
+                                { label: 'UDM Smart-Meter', url: 'https://your_onedrive_link_to_udm_smart_meter' },
+                                { label: 'UDM Wireless-Product-Package', url: 'https://your_onedrive_link_to_udm_wireless_product_package' },
+                                { label: 'UDM Gateway GW06-04', url: 'https://your_onedrive_link_to_udm_gateway_gw06_04' }
+                            ],
+                            [
+                                { label: 'EDM_studio-electricity-charge-Solution', url: 'https://your_onedrive_link_to_edm_studio_electricity_charge_solution' },
+                                { label: 'UDM PSM-Profile', url: 'https://your_onedrive_link_to_udm_psm_profile' },
+                                { label: 'UDM Wired-Product-CT-Clamp', url: 'https://your_onedrive_link_to_udm_wired_product_ct_clamp' },
+                                { label: 'UDM Water-Meter-Solution', url: 'https://your_onedrive_link_to_udm_water_meter_solution' }
+                            ]
+                        ]
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </p>
     </div>
 
     <div id="consult-zh" class="content-container">
@@ -2061,7 +2384,7 @@
                     <img src="https://github.com/Sethjesus/Photo/blob/main/UDM%20Logo.png?raw=true" alt="Company Logo"> <!-- 替换为你的公司logo的URL -->
                 </div>
                 <h1>Contact Us</h1>
-                <p><strong>UDM 景配PSM 事業群</strong></p>
+                <p><strong>UDM 景沛PSM 事業群</strong></p>
                 <p><strong>Address:</strong> 235新北市中和區中正路872號12樓之1</p>
                 <p><strong>Telephone:</strong> 02-6620-2388</p>
                 <p><strong>Fax:</strong> 02-6620-2720</p>
