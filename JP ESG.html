@@ -141,12 +141,7 @@
                             <img :src="slide" :alt="'Slide ' + (index + 1)">
                         </div>
                     </div>
-                    <div class="controls text-center mt-3">
-                        <button class="btn btn-primary" @click="prevSlide">Previous</button>
-                        <button class="btn btn-primary" @click="nextSlide">Next</button>
-                        <button class="btn btn-danger" @click="stopSlideshow">Stop</button>
-                        <button class="btn btn-success" @click="startSlideshow">Start</button>
-                    </div>
+                    
                 </div>
             
                 <!-- Bootstrap JS and dependencies -->
@@ -155,6 +150,7 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             
                 <script>
+                    
                     new Vue({
                         el: '#app',
                         data: {
@@ -194,8 +190,7 @@
                                 clearInterval(this.interval);
                             },
                             startSlideshow() {
-                                this.stopSlideshow(); // Clear any existing intervals
-                                this.interval = setInterval(this.showSlides, 3000);
+                                this.interval = setInterval(this.showSlides, 3000); // Ensure 'this' is correctly bound
                             }
                         },
                         mounted() {
@@ -205,6 +200,7 @@
                 </script>
             </body>
             </html>
+            
             <!DOCTYPE html>
                       <html lang="en">
                       <head>
@@ -712,10 +708,12 @@
         <p>Announcement: We are excited to announce a new ESG partnership with </p>
     </div>
     <div class="content">
-        <h1 class="header text-center text-success">ESG Partnership with Charsire</h1>
+        <h1 class="header text-center">ESG Partnership with Charsire</h1>
         <p>We are thrilled to announce our recent ESG partnership with Charsire, a leader in biotechnology innovations. This collaboration is aimed at enhancing our commitments to environmental, social, and governance (ESG) standards. Together, we will work on various initiatives to promote sustainability and social responsibility in our operations and product development.</p>
         <p>This partnership reflects our dedication to building a more sustainable future and underscores the importance of strong collaborative efforts in achieving significant ESG goals. By combining our resources and expertise, we aim to make a positive impact not just within our companies but also in the wider community</p>
         <p>Stay tuned for more updates as we embark on this exciting journey towards greater sustainability and improved community engagement</p>
+        <p>July 2024 Announcement</p>
+
     </div>
 </div>
 
@@ -1250,6 +1248,7 @@
                         overflow: hidden;
                         white-space: nowrap;
                         box-sizing: border-box;
+                        
                     }
                     .marquee span {
                         display: inline-block;
@@ -1297,7 +1296,12 @@
                         <button id="toCover">回封面</button>
                     </div>
                   
-                    <div class="marquee"><span> <img src="https://github.com/Sethjesus/Photo/blob/main/Fairy.jpg?raw=true" alt="Right Image" class="right-image"> <!-- Right side image --></span></div>
+                    <div class="marquee">
+                        <span>
+                            欲知政府補助方案與ESG政策，請洽 02-6620-2388 新北市中和區中正路872號12樓之一
+                        </span>
+                    </div>
+                    
                 </div>
                 <script>
                     let currentPage = 0;
@@ -1970,10 +1974,10 @@
         <p>公告：我們非常高興地宣布與儕陞生技達成新的ESG合作夥伴關係！</p>
     </div>
     <div class="content">
-        <h1 class="header text-center text-success">與儕陞生技的ESG合作夥伴關係</h1>
-        <p>我們非常高興地宣布最近與儕陞生技達成了ESG合作夥伴關係，儕陞生技是生物技術創新的領導者。此次合作旨在加強我們對環境、社會及治理（ESG）標準的承諾。我們將共同開展多項倡議，以促進我們的運營和產品開發中的可持續性和社會責任</p>
-        <p>此次合作反映了我們構建更可持續未來的決心，並強調了在實現重要ESG目標時，強大的合作努力的重要性。通過結合我們的資源和專業技術，我們旨在不僅在我們公司內部，而且在更廣泛的國際中產生積極的影響。</p>
-        <p>請繼續關注，隨著我們邁向更大的可持續性和改善地球永續環境參與的激動人心的旅程，我們將會帶來更多更新。
+        <h1 class="header text-center">與儕陞生技的ESG合作夥伴關係</h1>
+        <p>我們非常高興地宣布最近與儕陞生技達成了ESG合作夥伴關係，儕陞生技是生物技術創新的領導者。此次合作將協助儕陞生技作好廠內的用電管理，做好用電規劃與異常處理，減少不必要的用電浪費，達到低碳化目標，並進一步提昇對環境、社會及治理（ESG）標準的承諾。我們將共同開展多項倡議，以促進我們的運營和產品開發中的可持續性和社會責任</p>
+        <p>此次合作代表了景沛與儕陞生技共同構建永續發展的決心，並強調了在實現重要ESG目標時，強大的合作努力的重要性。通過結合我們的資源和專業技術，我們旨在不僅在我們公司內部，而且在更廣泛的國際中產生積極的影響。</p>
+        <p>請繼續關注，隨著我們邁向更大的可持續性和改善地球永續環境參與的激動人心的旅程，我們將會帶來更多更新。</p>
             <BR><BR> 2024年七月
         </p>
     </div>
