@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JPESG EDM</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-image: url('https://github.com/Sethjesus/Photo/blob/main/EDM10.jpg?raw=true');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container-fluid {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .pages {
+      display: flex;
+      width: 900vw; /* 9頁幻燈片 */
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .page {
+      min-width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .page img {
+      width: 60%;
+      max-height: 75%;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .page img:hover {
+      transform: scale(1.05);
+    }
+
+    .page-text {
+      font-size: 2vw;
+      color: white;
+      text-align: center;
+      margin-bottom: 10px;
+      background-color: rgba(12, 176, 182, 0.0);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .controls button, .home-btn {
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.2s;
+      margin: 5px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .controls button {
+      background-color: #007BFF;
+    }
+
+    .home-btn {
+      background-color: #28a745; /* 綠色按鈕 */
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .home-btn:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="pages" id="slider">
+      <div class="page">
+        <div class="page-text"><sub>Page 1</sub> Comprehensive 3-in-1 Solution for Energy, Air Quality, and Water</div>
+        <img src="https://github.com/Sethjesus/Photo/blob/main/EDM11.jpg?raw=true" onclick="toggleFullscreen(this)">
+      </div>
+      <div class="page">
+        <div class="page-text"><sub>Page 2</sub>Efficient Cooling Chiller Energy Management</div>
+        <img src="https://github.com/Sethjesus/Photo/blob/main/EDM12.jpg?raw=true" onclick="toggleFullscreen(this)">
+      </div>      
+      <div class="page">
+        <div class="page-text"><sub>Page 3</sub> Advanced ISO 50001 Energy Management for Sustainability</div>
+        <img src="https://github.com/Sethjesus/Photo/blob/main/EDM14.jpg?raw=true" onclick="toggleFullscreen(this)">
+      </div>
+      <div class="page">
+        <div class="page-text"><sub>Page 4</sub> UDM JP Partnership – Smart Meter Innovative Service Model</div>
+        <img src="https://github.com/Sethjesus/Photo/blob/main/EDM15.jpg?raw=true" onclick="toggleFullscreen(this)">
+      </div>
+      <div class="page">
+        <div class="page-text"><sub>Page 5</sub> P-Trade Business: ESG Solutions & Services</div>
+        <img src="https://github.com/Sethjesus/Photo/blob/main/EDM16.jpg?raw=true" onclick="toggleFullscreen(this)">
+      </div>
+      <div class="page">
+        <div class="page-text"><sub>Page 6</sub> Advanced Wireless Energy Monitoring & Control</div>
+        <img src="https://github.com/Sethjesus/Photo/blob/main/EDM17.jpg?raw=true" onclick="toggleFullscreen(this)">
+      </div>
+      <div class="page">
+        <div class="page-text"><sub>Page 7</sub> Comprehensive Self-Carbon Audit Services for SMEs</div>
+        <img src="https://github.com/Sethjesus/Photo/blob/main/EDM18.jpg?raw=true" onclick="toggleFullscreen(this)">
+      </div>
+   
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="prev">prev</button>
+    <button id="next">next</button>
+    <button id="stop">stop</button>
+    <a href="https://sethjesus.github.io/JPESG/JP ESG.html" class="home-btn">To JPESG</a>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slider = document.getElementById('slider');
+    const totalPages = document.querySelectorAll('.page').length;
+    let autoSlide;
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
+    }
+
+    function nextPage() {
+      currentIndex = (currentIndex + 1) % totalPages;
+      updateSlider();
+    }
+
+    function prevPage() {
+      currentIndex = (currentIndex - 1 + totalPages) % totalPages;
+      updateSlider();
+    }
+
+    function startAutoSlide() {
+      autoSlide = setInterval(nextPage, 6000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlide);
+    }
+
+    document.getElementById('next').addEventListener('click', nextPage);
+    document.getElementById('prev').addEventListener('click', prevPage);
+    document.getElementById('stop').addEventListener('click', stopAutoSlide);
+
+    startAutoSlide();
+
+    function toggleFullscreen(img) {
+      if (!document.fullscreenElement) {
+        img.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>
