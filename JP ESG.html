@@ -68,6 +68,7 @@
             width: 100%;
             margin-top: auto;
         }
+        
     </style>
 </head>
 <body>
@@ -75,21 +76,30 @@
         <div class="logo">
             <img src="https://github.com/Sethjesus/Jacky/blob/main/Logo.jpg?raw=true" alt="JP ESG Logo">
         </div>
-        <ul class="nav-links" id="nav-links-en">
-            <li><a onclick="showContent('home-en')">Home</a></li>
-            <li><a onclick="showContent('solution-en')">Solution</a></li>
-            <li><a onclick="showContent('news-en')">News&Events</a></li>
-            <li><a onclick="showContent('download-en')">Download</a></li>
-            <li><a onclick="showContent('consult-en')">Consult</a></li>
-            <li><a onclick="showContent('contact-en')">Contact</a></li>
-        </ul>
-        <ul class="nav-links" id="nav-links-zh" style="display: none;">
-            <li><a onclick="showContent('home-zh')">首頁</a></li>
-            <li><a onclick="showContent('solution-zh')">解決方案</a></li>
-            <li><a onclick="showContent('news-zh')">新聞發布</a></li>
-            <li><a onclick="showContent('download-zh')">下載</a></li>
-            <li><a onclick="showContent('consult-zh')">諮詢</a></li>
-            <li><a onclick="showContent('contact-zh')">聯絡方式</a></li>
+       <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<ul class="nav-links" id="nav-links-en">
+    <li><a onclick="showContent('home-en')"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="https://sethjesus.github.io/JPESG/EDM2.html" target="_blank"><i class="fas fa-mail-bulk"></i> Soluctions</a></li> <!-- EDM 連結 -->
+    <li><a onclick="showContent('product-en')"><i class="fas fa-lightbulb"></i> Products</a></li>
+    <li><a onclick="showContent('news-en')"><i class="fas fa-newspaper"></i> News & Events</a></li>
+    <li><a onclick="showContent('download-en')"><i class="fas fa-download"></i> Download</a></li>
+    <li><a onclick="showContent('consult-en')"><i class="fas fa-comments"></i> Consult</a></li>
+    <li><a onclick="showContent('contact-en')"><i class="fas fa-envelope"></i> Contact</a></li>
+   
+</ul>
+
+
+<ul class="nav-links" id="nav-links-zh" style="display: none;">
+    <li><a onclick="showContent('home-zh')"><i class="fas fa-home"></i> 首頁</a></li>
+    <li><a onclick="showContent('products-zh')"><i class="fas fa-lightbulb"></i> 產品</a></li>
+    <li><a onclick="showContent('news-zh')"><i class="fas fa-newspaper"></i> 新聞發布</a></li>
+    <li><a onclick="showContent('download-zh')"><i class="fas fa-download"></i> 下載</a></li>
+    <li><a onclick="showContent('consult-zh')"><i class="fas fa-comments"></i> 諮詢</a></li>
+    <li><a onclick="showContent('contact-zh')"><i class="fas fa-envelope"></i> 聯絡方式</a></li>
+</ul>
+
         </ul>
         <div class="language-toggle">
             <button id="toggle-en" onclick="toggleLanguage('en')">EN</button>
@@ -247,8 +257,8 @@
             </p>
     </div>
 
-    <div id="solution-en" class="content-container">
-        <h1>Solution</h1>
+    <div id="product-en" class="content-container">
+        <h1>Products</h1>
         <p> <!DOCTYPE html>
             <html lang="zh">
             <head>
@@ -1150,6 +1160,9 @@
 
         </p>
     </div>
+   
+
+    
 
     <div id="home-zh" class="content-container">
         <h1>歡迎光臨JP ESG</h1>
@@ -1388,8 +1401,8 @@
     </p>
     </div>
 
-    <div id="solution-zh" class="content-container">
-        <h1>解決方案</h1>
+    <div id="products-zh" class="content-container">
+        <h1>產品</h1>
         <div>
         <p><!DOCTYPE html>
             <html lang="en">
@@ -2417,53 +2430,27 @@
 
     <footer>
         <div id="footer-en">
-            <div class="social-links">
-                <a href="https://api.whatsapp.com/send?phone=886952316596&text=Can%20I%20know%20more%20about%20your%20service.." target="_blank">
-                    <div>WhatsApp</div>
-                    <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213530&authkey=%21AK5W_r7ns1qyZvM" alt="WhatsApp" style="height: 50px;">
-                </a>
-                <a href="https://www.facebook.com/groups/2933690666774064" target="_blank">
-                    <div>Facebook</div>
-                    <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213531&authkey=%21AInSbjw3MaEJJyI" alt="Facebook" style="height: 50px;">
-                </a>
-                <a href="https://www.instagram.com/udmesg/" target="_blank">
-                    <div>Instagram</div>
-                    <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213532&authkey=%21ACN3ZmiuUygnm_M" alt="Instagram" style="height: 50px;">
-                </a>
-            </div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfV_N6FdBkh5PjU2WC7eE33YMoaq69-S5MgBGj_P1MnLNI0Ig/viewform?usp=sf_link">
-                <div style="text-align: center;">
-                    <span style="font-size: 24px; color: blue;">UDM ESG and EMS Products Survey</span><br>
-                    <img src="https://github.com/Sethjesus/Jacky/blob/main/Google_Form_QR_Code%20_E.jpg?raw=true" alt="QR Code for ESG and EMS Products Survey" width="200">
-                </div>
-            </a>
-            <p>&copy; 2024 JP ESG. All rights reserved.</p>
+            <p>&copy; 2025 UDM Group Technology Co., Ltd.JP ESG. All rights reserved.</p>
+            <p>
+                <strong>Address:</strong> 12F.-1, No. 872, Zhongzheng Rd., Zhonghe Dist., New Taipei City 235, Taiwan (R.O.C.) |
+                <strong>TEL:</strong> +886-2-66202388 |
+                <strong>FAX:</strong> +886-2-66202720
+            </p>
         </div>
+        
+
         <div id="footer-zh" style="display: none;">
-            <div class="social-links">
-                <a href="https://api.whatsapp.com/send?phone=886952316596&text=Can%20I%20know%20more%20about%20your%20service.." target="_blank">
-                    <div>WhatsApp</div>
-                    <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213530&authkey=%21AK5W_r7ns1qyZvM" alt="WhatsApp" style="height: 50px;">
-                </a>
-                <a href="https://www.facebook.com/groups/2933690666774064" target="_blank">
-                    <div>Facebook</div>
-                    <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213531&authkey=%21AInSbjw3MaEJJyI" alt="Facebook" style="height: 50px;">
-                </a>
-                <a href="https://www.instagram.com/udmesg/" target="_blank">
-                    <div>Instagram</div>
-                    <img src="https://onedrive.live.com/embed?resid=8EF63FDD92F9370F%213532&authkey=%21ACN3ZmiuUygnm_M" alt="Instagram" style="height: 50px;">
-                </a>
-            </div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2wNI1FmEk1Dh3hJrw2UNjR_6VzsmGJTxeqP7HvZzLEfyI1A/viewform?edit2=2_ABaOnucBosjgda-BxXfqFkibRZi6OCbGMVJHdcQMQr_Q3MeOX8QCcdapQMrUL9DQGQ">
-                <div style="text-align: center;">
-                    <span style="font-size: 24px; color: blue;">UDM能耗管理調查表</span><br>
-                    <img src="https://github.com/Sethjesus/Jacky/blob/main/Google_Form_QR_Code.jpg?raw=true" alt="能耗管理調查" width="200">
-                </div>
-            </a>
-            <p>&copy; 2024 景沛ESG。版權所有。</p>
+          
+            <p>
+                <p>&copy; 2025 UDM Group Technology Co., Ltd.景沛團隊版權所有.</p>
+                <strong>Address:</strong> 台灣新北市中正路872號12樓之1 (R.O.C.) |
+                <strong>TEL:</strong> +886-2-66202388 |
+                <strong>FAX:</strong> +886-2-66202720
+            </p>
         </div>
     </footer>
 
+    
     <script>
         function toggleLanguage(lang) {
             const enLinks = document.getElementById('nav-links-en');
