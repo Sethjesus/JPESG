@@ -81,7 +81,7 @@
 
 <ul class="nav-links" id="nav-links-en">
     <li><a onclick="showContent('home-en')"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="https://sethjesus.github.io/JPESG/EDM2.html" target="_blank"><i class="fas fa-mail-bulk"></i> Soluctions</a></li> <!-- EDM 連結 -->
+    <li><a href="https://sethjesus.github.io/JPESG/EDM2.html" target="_blank"><i class="fas fa-mail-bulk"></i> Solutions</a></li> <!-- EDM 連結 -->
     <li><a onclick="showContent('product-en')"><i class="fas fa-lightbulb"></i> Products</a></li>
     <li><a onclick="showContent('news-en')"><i class="fas fa-newspaper"></i> News & Events</a></li>
     <li><a onclick="showContent('download-en')"><i class="fas fa-download"></i> Download</a></li>
@@ -1127,31 +1127,37 @@
             </style>
             </head>
             <body>
-            <div id="vue-container">
-                <div class="image-area">
-                    <img src="https://github.com/Sethjesus/Photo/blob/main/UDM%20Logo.png?raw=true" alt="Company Logo"> <!-- 替换为你的公司logo的URL -->
+                <div id="vue-container">
+                    <div class="image-area">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/UDM%20Logo.png?raw=true" alt="Company Logo"> 
+                    </div>
+                    <h1>Contact Us</h1>
+                    <p><strong>{{ companyName }}</strong></p>
+                    <p><strong>Address:</strong> {{ address }}</p>
+                    <p><strong>Telephone:</strong> {{ telephone }}</p>
+                    <p><strong>Fax:</strong> {{ fax }}</p>
+                    <p><strong>WhatsApp:</strong> {{ whatsapp }}</p>
+                    <p><strong>Email:</strong> <a :href="'mailto:' + email">{{ email }}</a></p>
+                    <div class="partners-area">
+                        <img src="https://github.com/Sethjesus/Photo/blob/main/SDGs.jpg?raw=true" alt="Partners Image"> 
+                    </div>
+                    <p>&copy; 2024 All Rights Reserved.</p>
                 </div>
-                <h1>Contact Us</h1>
-                <p><strong>{{ companyName }}</strong></p>
-                <p><strong>Address:</strong> {{ address }}</p>
-                <p><strong>Telephone:</strong> {{ telephone }}</p>
-                <p><strong>Fax:</strong> {{ fax }}</p>
-                <div class="partners-area">
-                    <img src="https://github.com/Sethjesus/Photo/blob/main/SDGs.jpg?raw=true" alt="Partners Image"> <!-- 替换为合作伙伴图片的URL -->
-                </div>
-                <p>&copy; 2024 All Rights Reserved.</p>
-            </div>
-            <script>
-                new Vue({
-                    el: '#vue-container',
-                    data: {
-                        companyName: 'UDM Group Technology Co., Ltd.',
-                        address: '12F.-1, No.872, Zhongzheng Rd., Zhonghe Dist., New Taipei City 235, Taiwan (R.O.C.)',
-                        telephone: '+886-2-66202388',
-                        fax: '+886-2-66202720'
-                    }
-                });
-            </script>
+                
+                <script>
+                    new Vue({
+                        el: '#vue-container',
+                        data: {
+                            companyName: 'UDM Group Technology Co., Ltd.',
+                            address: '12F.-1, No.872, Zhongzheng Rd., Zhonghe Dist., New Taipei City 235, Taiwan (R.O.C.)',
+                            telephone: '+886-2-66202388 Ext.17',
+                            fax: '+886-2-66202720',
+                            whatsapp: '+886926800215',
+                            email: '201.esg@udmgroup.com'
+                        }
+                    });
+                </script>
+                
             </body>
             </html>
             
